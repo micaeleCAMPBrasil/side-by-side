@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "529664438735",
+    "project_id": "side-by-side-25dc9",
+    "storage_bucket": "side-by-side-25dc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529664438735:android:80c5871c29e7833935e2ba",
+        "android_client_info": {
+          "package_name": "com.sidebyside.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdhNDmznlAb1Qs_JQ6MwBSHx6xjmltK-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
