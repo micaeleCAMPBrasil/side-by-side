@@ -1,0 +1,5 @@
+# Ignorar arquivos sensíveis
+/api/**/chave
+/api/**/firebase
+*.json
+*.env
