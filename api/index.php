@@ -16,7 +16,7 @@
     <div class="container">
         <div class="col-lg-12">
             <form action="php/addProgresso.php" method="post">
-                <h3>UPLOAD DEVOCIONAL LIÇÃO</h3>
+                <h3>UPLOAD DEVOCIONAL LIÇÃOS</h3>
                 <input type="text" placeholder="Redirecionamento" name="x" class="form-control" value="progresso_licao">
                 <input type="text" placeholder="Uid" name="uid" class="form-control" value="rwDtIEU4Saf5qvtgdY6JRYHJqvl1">
                 <input type="text" placeholder="IdPG" name="idPG" class="form-control" value="26">
@@ -66,7 +66,7 @@
     <div class="container">
         <div class="col-lg-12">
             <form action="php/getProgresso.php" method="post">
-                <h3>Get Progresso</h3>
+                <h3>Get Progressos</h3>
                 <input type="text" placeholder="ID Líder" name="idLider" class="form-control" value="1">
                 <input type="text" placeholder="ID PG" name="idPg" class="form-control" value="1">
                 <input type="text" placeholder="REDIRECIONAMENTO" name="x" class="form-control" value="1">
