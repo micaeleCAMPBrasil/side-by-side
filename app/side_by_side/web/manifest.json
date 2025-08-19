@@ -1,10 +1,10 @@
 {
     "name": "Side by Side",
     "short_name": "Side by Side",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#0xFFF9FAFF",
-    "theme_color": "#0xfff7cb2d",
+    "background_color": "#F9FAFF",
+    "theme_color": "#F7CB2D",
     "description": "Side by Side",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
@@ -30,6 +30,20 @@
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "icons/screenshot1.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "icons/screenshot2.jpg",
+            "sizes": "1920x1080",
+            "type": "image/jpg",
+            "form_factor": "wide"
         }
     ],
     "apple-mobile-web-app-capable": "yes",

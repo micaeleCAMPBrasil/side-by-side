@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:side_by_side/PwaInstallPage.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 import 'package:side_by_side/utils/auth_check.dart';
@@ -17,12 +19,24 @@ class _ASplashScreenState extends State<ASplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    _redirect();
+  }
+
+  void _redirect() async {
+    // Dá um tempinho para mostrar o splash
+    await Future.delayed(const Duration(seconds: 2));
+
+    if (kIsWeb) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CheckUserLoggedInOrNot()),
+        MaterialPageRoute(builder: (context) => PwaInstallPage()),
       );
-    });
+    } /*else {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const CheckUserLoggedInOrNot()),
+    );
+    }*/
   }
 
   @override
