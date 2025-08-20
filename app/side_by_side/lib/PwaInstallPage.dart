@@ -1,3 +1,4 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'dart:js' as js;
 import 'package:flutter/material.dart';
@@ -6,14 +7,15 @@ import 'package:side_by_side/utils/AColors.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 import 'package:side_by_side/utils/auth_check.dart';
 
-class PwaInstallPage extends StatefulWidget {
-  const PwaInstallPage({super.key});
+class pwaInstallPage extends StatefulWidget {
+  const pwaInstallPage({super.key});
 
   @override
-  _PwaInstallPageState createState() => _PwaInstallPageState();
+  // ignore: library_private_types_in_public_api
+  _pwaInstallPageState createState() => _pwaInstallPageState();
 }
 
-class _PwaInstallPageState extends State<PwaInstallPage> {
+class _pwaInstallPageState extends State<pwaInstallPage> {
   bool canInstall = false;
   bool isIos = false;
 
@@ -61,6 +63,7 @@ class _PwaInstallPageState extends State<PwaInstallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
@@ -69,91 +72,76 @@ class _PwaInstallPageState extends State<PwaInstallPage> {
             fit: BoxFit.cover, // ajusta para cobrir todo o container
           ),
         ),
-        child: Center(
-          child:
-              /*isIos
-                  ? Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Text(
-                          "Para instalar o app no iOS, toque no botão de compartilhar no Safari e selecione 'Adicionar à Tela de Início'.",
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 20),
-                      ],
-                    ),
-                  )
-                  : canInstall
-                  ? ElevatedButton(
-                    onPressed: _installPwa,
-                    child: const Text("Instalar App"),
-                  )
-                  : const CircularProgressIndicator(),*/
-              /*ElevatedButton(
-            onPressed: _installPwa,
-            child: const Text("Instalar App"),
-          ),*/
-              isIos
-                  ? Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: Text(
-                      'Para instalar o app no iOS, toque no botão de compartilhar no Safari e selecione "Adicionar à Tela de Início".',
-                      style: colorPrimaryBold18,
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                  : canInstall
-                  ? Stack(
-                    children: [
-                      Container(
-                        width: 150,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          gradient: const LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [black, black],
-                          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            isIos
+                ? Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Text(
+                    'Para instalar o app no iOS, toque no botão de compartilhar no Safari e selecione "Adicionar à Tela de Início".',
+                    style: colorPrimaryBold18,
+                    textAlign: TextAlign.center,
+                  ),
+                )
+                : canInstall
+                ? Stack(
+                  children: [
+                    Container(
+                      width: 150,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [black, black],
                         ),
                       ),
-                      Container(
-                        width: 150,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              black.withOpacity(.95),
-                              black.withOpacity(.95),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(right: 16.0),
-                        width: 150,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: appColorPrimary,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.download),
-                            const SizedBox(width: 4),
-                            Text('Instalar App', style: colorPrimaryBold16),
+                    ),
+                    Container(
+                      width: 150,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            black.withOpacity(.95),
+                            black.withOpacity(.95),
                           ],
                         ),
                       ),
-                    ],
-                  ).onTap(_installPwa)
-                  : const CircularProgressIndicator(),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(right: 16.0),
+                      width: 150,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: appColorPrimary,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.download),
+                          const SizedBox(width: 4),
+                          Text('Instalar App', style: colorPrimaryBold16),
+                        ],
+                      ),
+                    ),
+                  ],
+                ).onTap(_installPwa)
+                : const CircularProgressIndicator(),
+
+            Text(
+              'E ative as notificações!',
+              style: colorPrimaryBold18,
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

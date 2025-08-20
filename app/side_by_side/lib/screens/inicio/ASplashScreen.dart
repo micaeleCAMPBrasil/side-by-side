@@ -2,10 +2,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:side_by_side/PwaInstallPage.dart';
+import 'package:side_by_side/pwaInstallPage.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/utils/AConstants.dart';
-import 'package:side_by_side/utils/auth_check.dart';
 
 class ASplashScreen extends StatefulWidget {
   const ASplashScreen({super.key});
@@ -29,7 +28,7 @@ class _ASplashScreenState extends State<ASplashScreen> {
     if (kIsWeb) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => PwaInstallPage()),
+        MaterialPageRoute(builder: (context) => pwaInstallPage()),
       );
     } /*else {
     Navigator.pushReplacement(
