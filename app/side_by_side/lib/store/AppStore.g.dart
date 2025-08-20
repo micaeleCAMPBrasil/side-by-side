@@ -1,5 +1,3 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 part of 'AppStore.dart';
 
 // **************************************************************************
@@ -9,8 +7,10 @@ part of 'AppStore.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$AppStore on AppStoreBase, Store {
-  late final _$isDarkModeOnAtom =
-      Atom(name: 'AppStoreBase.isDarkModeOn', context: context);
+  late final _$isDarkModeOnAtom = Atom(
+    name: 'AppStoreBase.isDarkModeOn',
+    context: context,
+  );
 
   @override
   bool get isDarkModeOn {
@@ -25,8 +25,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$isHoverAtom =
-      Atom(name: 'AppStoreBase.isHover', context: context);
+  late final _$isHoverAtom = Atom(
+    name: 'AppStoreBase.isHover',
+    context: context,
+  );
 
   @override
   bool get isHover {
@@ -41,8 +43,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$iconColorAtom =
-      Atom(name: 'AppStoreBase.iconColor', context: context);
+  late final _$iconColorAtom = Atom(
+    name: 'AppStoreBase.iconColor',
+    context: context,
+  );
 
   @override
   Color? get iconColor {
@@ -57,8 +61,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$backgroundColorAtom =
-      Atom(name: 'AppStoreBase.backgroundColor', context: context);
+  late final _$backgroundColorAtom = Atom(
+    name: 'AppStoreBase.backgroundColor',
+    context: context,
+  );
 
   @override
   Color? get backgroundColor {
@@ -73,8 +79,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$appBarColorAtom =
-      Atom(name: 'AppStoreBase.appBarColor', context: context);
+  late final _$appBarColorAtom = Atom(
+    name: 'AppStoreBase.appBarColor',
+    context: context,
+  );
 
   @override
   Color? get appBarColor {
@@ -89,8 +97,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$scaffoldBackgroundAtom =
-      Atom(name: 'AppStoreBase.scaffoldBackground', context: context);
+  late final _$scaffoldBackgroundAtom = Atom(
+    name: 'AppStoreBase.scaffoldBackground',
+    context: context,
+  );
 
   @override
   Color? get scaffoldBackground {
@@ -105,8 +115,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$backgroundSecondaryColorAtom =
-      Atom(name: 'AppStoreBase.backgroundSecondaryColor', context: context);
+  late final _$backgroundSecondaryColorAtom = Atom(
+    name: 'AppStoreBase.backgroundSecondaryColor',
+    context: context,
+  );
 
   @override
   Color? get backgroundSecondaryColor {
@@ -116,14 +128,19 @@ mixin _$AppStore on AppStoreBase, Store {
 
   @override
   set backgroundSecondaryColor(Color? value) {
-    _$backgroundSecondaryColorAtom
-        .reportWrite(value, super.backgroundSecondaryColor, () {
-      super.backgroundSecondaryColor = value;
-    });
+    _$backgroundSecondaryColorAtom.reportWrite(
+      value,
+      super.backgroundSecondaryColor,
+      () {
+        super.backgroundSecondaryColor = value;
+      },
+    );
   }
 
-  late final _$appColorPrimaryLightColorAtom =
-      Atom(name: 'AppStoreBase.appColorPrimaryLightColor', context: context);
+  late final _$appColorPrimaryLightColorAtom = Atom(
+    name: 'AppStoreBase.appColorPrimaryLightColor',
+    context: context,
+  );
 
   @override
   Color? get appColorPrimaryLightColor {
@@ -133,14 +150,19 @@ mixin _$AppStore on AppStoreBase, Store {
 
   @override
   set appColorPrimaryLightColor(Color? value) {
-    _$appColorPrimaryLightColorAtom
-        .reportWrite(value, super.appColorPrimaryLightColor, () {
-      super.appColorPrimaryLightColor = value;
-    });
+    _$appColorPrimaryLightColorAtom.reportWrite(
+      value,
+      super.appColorPrimaryLightColor,
+      () {
+        super.appColorPrimaryLightColor = value;
+      },
+    );
   }
 
-  late final _$iconSecondaryColorAtom =
-      Atom(name: 'AppStoreBase.iconSecondaryColor', context: context);
+  late final _$iconSecondaryColorAtom = Atom(
+    name: 'AppStoreBase.iconSecondaryColor',
+    context: context,
+  );
 
   @override
   Color? get iconSecondaryColor {
@@ -155,8 +177,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$textPrimaryColorAtom =
-      Atom(name: 'AppStoreBase.textPrimaryColor', context: context);
+  late final _$textPrimaryColorAtom = Atom(
+    name: 'AppStoreBase.textPrimaryColor',
+    context: context,
+  );
 
   @override
   Color? get textPrimaryColor {
@@ -171,8 +195,10 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$textSecondaryColorAtom =
-      Atom(name: 'AppStoreBase.textSecondaryColor', context: context);
+  late final _$textSecondaryColorAtom = Atom(
+    name: 'AppStoreBase.textSecondaryColor',
+    context: context,
+  );
 
   @override
   Color? get textSecondaryColor {
@@ -187,22 +213,28 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$toggleDarkModeAsyncAction =
-      AsyncAction('AppStoreBase.toggleDarkMode', context: context);
+  late final _$toggleDarkModeAsyncAction = AsyncAction(
+    'AppStoreBase.toggleDarkMode',
+    context: context,
+  );
 
   @override
   Future<void> toggleDarkMode({bool? value}) {
-    return _$toggleDarkModeAsyncAction
-        .run(() => super.toggleDarkMode(value: value));
+    return _$toggleDarkModeAsyncAction.run(
+      () => super.toggleDarkMode(value: value),
+    );
   }
 
-  late final _$AppStoreBaseActionController =
-      ActionController(name: 'AppStoreBase', context: context);
+  late final _$AppStoreBaseActionController = ActionController(
+    name: 'AppStoreBase',
+    context: context,
+  );
 
   @override
   void toggleHover({bool value = false}) {
     final _$actionInfo = _$AppStoreBaseActionController.startAction(
-        name: 'AppStoreBase.toggleHover');
+      name: 'AppStoreBase.toggleHover',
+    );
     try {
       return super.toggleHover(value: value);
     } finally {
