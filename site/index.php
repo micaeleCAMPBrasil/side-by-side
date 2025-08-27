@@ -97,6 +97,7 @@
 					style="cursor: pointer;">
 					<div class="what-we-do-box-icon"><i class="fa fa-download"></i></div>
 					<h3>App</h3>
+					<p>🚨 Importante: Ative as notificações para melhor uso do APP</p>
 					<a class="big-link-1" href="https://sbs.campbrasil.com/" target="_blank">Faça o Download</a>
 				</div>
 				<div class="col-sm-3 what-we-do-box wow fadeInDown">

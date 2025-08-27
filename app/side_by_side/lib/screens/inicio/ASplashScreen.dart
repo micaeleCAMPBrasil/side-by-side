@@ -1,8 +1,9 @@
 // ignore_for_file: file_names
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:side_by_side/pwaInstallPage.dart';
+import 'package:side_by_side/utils/pwa_install_page.dart'; // <-- novo import condicional
+import 'package:side_by_side/utils/auth_check.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 
@@ -28,14 +29,14 @@ class _ASplashScreenState extends State<ASplashScreen> {
     if (kIsWeb) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => pwaInstallPage()),
+        MaterialPageRoute(builder: (context) => PwaInstallPage()),
       );
-    } /*else {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const CheckUserLoggedInOrNot()),
-    );
-    }*/
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const CheckUserLoggedInOrNot()),
+      );
+    }
   }
 
   @override

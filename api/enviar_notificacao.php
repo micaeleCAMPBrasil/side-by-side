@@ -142,7 +142,11 @@ $funcoes = new Funcao();
             <div class="lista-usuarios">
                 <?php foreach ($users[1] as $index => $usuario): ?>
                     <?php if (!empty($usuario['token_alert'])): ?>
-                        <div class="usuario">
+                        <?php
+                        $background_color = $usuario['token_alert'] == 'carregando...' ? '#EF8675' : 'white';
+                        $font_color = $usuario['token_alert'] == 'carregando...' ? 'white' : 'black';
+                        ?>
+                        <div class="usuario" style="background-color: <?= $background_color; ?>; color: <?= $font_color; ?>">
                             <?php
                             $nomeESobrenome = $funcoes->nome_e_sobrenome($usuario['nome']);
                             ?>

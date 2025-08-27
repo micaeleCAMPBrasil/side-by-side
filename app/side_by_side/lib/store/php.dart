@@ -25,7 +25,7 @@ List<Modulos> getModulos() {
       title: 'A Trilha',
       subtitle: 'O Deus Criador\ne eterno',
       descricao:
-          'O primeiro modulo do nosso currículo e o de Criacionismo. A Primeira lição trata da existência de Deus, e é a mais importante porque nada faz sentido se não assumirmos que existe um Deus e que Ele é eterno e criador. As lições seguintes desse modulo tratam do que Deus criou e de como Ele criou. Há pequenas experiencias cientificas e dados que ajudarão as crianças a tomarem uma posição firme frente ao evolucionismo pregado nas escolas.\nA Trilha é a base para entender sobre Criacionismo. A primeira lição trata da existência de Deus, e é a mais importante porque nada faz sentido se não assumirmos que existe um Deus e que Ele é eterno e criador. As lições seguintes desse módulo tratam do que Deus criou e de como Ele criou. Há pequenas experiências científicas e dados que ajudarão as crianças a tomarem uma posição firme frente ao evolucionismo pregado nas escolas. A intenção é que elas assumam essa verdade para elas pela fé, porém também com lógica e racionalidade.',
+          'A Trilha é a base para entender sobre Criacionismo. A primeira lição trata da existência de Deus, e é a mais importante porque nada faz sentido se não assumirmos que existe um Deus e que Ele é eterno e criador. As lições seguintes desse módulo tratam do que Deus criou e de como Ele criou. Há pequenas experiências científicas e dados que ajudarão as crianças a tomarem uma posição firme frente ao evolucionismo pregado nas escolas. A intenção é que elas assumam essa verdade para elas pela fé, porém também com lógica e racionalidade.',
       parte1: 'Aquecimento',
       parte2: 'Mapa da Trilha',
       parte3: 'Fazendo as Malas',

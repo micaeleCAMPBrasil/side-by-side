@@ -19,9 +19,19 @@ class PushNotificationsWeb {
 
   /// 📲 Obtem o token FCM
   static Future<String?> getToken() async {
-    String? token = await _firebaseMessaging.getToken();
-    debugPrint('🔑 Token do dispositivo: $token');
-    return token;
+    try {
+      String? token = await _firebaseMessaging.getToken();
+      if (token != null) {
+        debugPrint('🔑 Token do dispositivo: $token');
+        return token;
+      } else {
+        debugPrint('⚠️ Usuário não permitiu notificações.');
+        return null;
+      }
+    } catch (e) {
+      debugPrint('❌ Erro ao obter token: $e');
+      return null;
+    }
   }
 
   /// 🛑 Escuta mensagens quando o app está aberto (foreground)
