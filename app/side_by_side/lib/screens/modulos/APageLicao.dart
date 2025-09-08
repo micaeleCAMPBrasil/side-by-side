@@ -69,14 +69,14 @@ class _APageLicaoState extends State<APageLicao> {
       widget.usuario.uid,
       widget.pg.id.toString(),
       widget.modulo.id.toString(),
-      widget.licao.id.toString(),
+      widget.licao.nLicao.toString(),
     );
 
     await storePg.progressDevocionais(
       widget.usuario.uid,
       widget.pg.id.toString(),
       widget.modulo.id.toString(),
-      widget.licao.id.toString(),
+      widget.licao.nLicao.toString(),
     );
 
     setState(() {
@@ -338,7 +338,7 @@ class _APageLicaoState extends State<APageLicao> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(25),
                               child: Image.network(
-                                widget.licao.capa,
+                                widget.licao.icon,
                                 height: 40,
                                 width: 40,
                                 fit: BoxFit.cover,
@@ -387,6 +387,7 @@ class _APageLicaoState extends State<APageLicao> {
                                                   licao: widget.licao,
                                                   idProgresso:
                                                       progresso.first.id,
+                                                  initialPage: 0,
                                                 ),
                                           ),
                                         ),

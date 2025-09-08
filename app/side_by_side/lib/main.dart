@@ -7,12 +7,15 @@ import 'package:side_by_side/model/pg.dart';
 import 'package:side_by_side/model/usuario.dart';
 import 'package:side_by_side/store/AppStore.dart';
 import 'package:side_by_side/store/control_navigation.dart';
+import 'package:side_by_side/store/pg_store.dart';
+import 'package:side_by_side/store/php.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 import 'package:side_by_side/utils/ADataProvider.dart';
 import 'package:side_by_side/utils/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:side_by_side/utils/auth_service.dart';
+import 'package:side_by_side/utils/http_client.dart';
 
 import 'screens/inicio/ASplashScreen.dart';
 
@@ -62,13 +65,49 @@ void main() async {
         ChangeNotifierProvider(create: (context) => PgProvider()),
         ChangeNotifierProvider(create: (context) => ControlNav()),
       ],
-      child: const MyApp(),
+      child: MyApp(),
+      //child: const MyApp(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final PgStore storePg = PgStore(
+    repository: IFuncoesPHP(client: HttpClient()),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    //getLicao();
+  }
+
+  //bool _loading = false;
+
+  Pg pg = Pg(
+    id: 40,
+    uid: 'Db4jFXiw31ZsjZmpsyazao0w6293',
+    idModulo: 2,
+    nLicao: 1,
+    nDevocional: 1,
+    data: '23/08/2025',
+  );
+
+  /*Future getLicao() async {
+    Licaos licao = await storePg.getListLicoes(pg);
+
+    setState(() {
+      licao = licao;
+      _loading = true;
+    });
+  }*/
 
   // This widget is the root of your application.
   @override
@@ -78,6 +117,47 @@ class MyApp extends StatelessWidget {
           (_) => MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Side by Side ${!isMobile ? ' ${platformName()}' : ''}',
+            /*home: PageFlipBook(
+              usuario: Usuario(
+                uid: 'Db4jFXiw31ZsjZmpsyazao0w6293',
+                nome: 'Cleideane Sales',
+                email: 'cleideanesales66@gmail.com',
+                senha: '123456',
+                telefone: '85985651654',
+                pais: 'Brasil',
+                estado: 'CE',
+                cidade: 'Maranguape',
+                data: '23/08/2025',
+                ativo: 1,
+                foto: '',
+                background: '',
+                tokenAlert: '',
+              ),
+              pg: pg,
+              modulo: Modulos(
+                id: 2,
+                title: 'Mergulho',
+                subtitle: '',
+                descricao: '',
+                parte1: '',
+                parte2: '',
+                parte3: '',
+                capa: '',
+              ),
+              licao: Licaos(
+                id: 1,
+                idClico: 1,
+                idModulo: 2,
+                nLicao: 4,
+                qtdDevocional: 0,
+                title: 'Deus Existe',
+                subtitle: '',
+                capa: 'https://i.ibb.co/C7psVHb/capa-trilha.png',
+                icon: 'https://i.ibb.co/yR9tQWw/trilha-icon.png',
+              ),
+              idProgresso: 12,
+              initialPage: 4,
+            ),*/
             home: const ASplashScreen(),
             theme:
                 !appStore.isDarkModeOn

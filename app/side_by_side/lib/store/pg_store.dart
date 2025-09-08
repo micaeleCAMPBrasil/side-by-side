@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:side_by_side/data/licao_detalhada.dart';
 import 'package:side_by_side/model/devocional.dart';
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/model/pg.dart';
@@ -204,14 +203,6 @@ class PgStore {
     }
 
     isLoading.value = false;
-  }
-
-  List<LicaoFlipPage> getlicoesFlip(BuildContext context) {
-    // lista reversa
-    //final result = repository.licoesFlip(context).reversed.toList();
-    // lista ok
-    final result = repository.licoesFlip(context);
-    return result;
   }
 
   List<Devocional> getDevocionais(int idModulo, int idLicao) {

@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-
 import 'package:provider/provider.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/usuario.dart';
@@ -25,15 +24,26 @@ class _AProfileFragmentState extends State<AProfileFragment>
     repository: IFuncoesPHP(client: HttpClient()),
   );
 
+  bool? notificationsEnabled;
   @override
   void initState() {
     super.initState();
+    final usuario =
+        Provider.of<UsuarioProvider>(context, listen: false).getUsuario;
+    notificationsEnabled =
+        usuario.tokenAlert == '' || usuario.tokenAlert == 'carregando...'
+            ? false
+            : true;
   }
 
   @override
   Widget build(BuildContext context) {
     Usuario usuario =
         Provider.of<UsuarioProvider>(context, listen: false).getUsuario;
+    /*bool enabled =
+        usuario.tokenAlert == '' || usuario.tokenAlert == 'carregando...'
+            ? false
+            : true;*/
 
     return SizedBox(
       width: MediaQuery.of(context).size.width,
@@ -217,6 +227,34 @@ class _AProfileFragmentState extends State<AProfileFragment>
               ),
             ),
             //2nd content (Social information)
+            /*ListTile(
+              leading: Icon(Icons.notifications, color: context.iconColor),
+              title: Text('Notificações', style: boldTextStyle()),
+              trailing: Switch(
+                value: notificationsEnabled ?? false,
+                onChanged: (val) async {
+                  debugPrint('clicando $val');
+                  setState(() {
+                    notificationsEnabled = val;
+                  });
+
+                  if (val) {
+                    await PushNotificationsWeb.requestNotificationPermission();
+                    final token = await PushNotificationsWeb.getToken();
+                    if (token != null && token.isNotEmpty) {
+                      usuario.tokenAlert = token;
+                      Provider.of<UsuarioProvider>(
+                        context,
+                        listen: false,
+                      ).updateUsuario(usuario);
+                      await storeUser.update_token(usuario);
+                    }
+                  }
+                },
+                activeColor: Colors.orange.shade600,
+              ),
+            ),
+            */
             ListTile(
               onTap: () {
                 Navigator.push(

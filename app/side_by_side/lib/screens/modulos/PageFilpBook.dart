@@ -3,6 +3,7 @@
 import 'package:page_flip/page_flip.dart';
 import 'package:flutter/material.dart';
 import 'package:side_by_side/data/licao_detalhada.dart';
+import 'package:side_by_side/data/licoes_repository.dart';
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/pg.dart';
@@ -19,13 +20,14 @@ import 'package:side_by_side/utils/http_client.dart';
 class PageFlipBook extends StatefulWidget {
   Usuario usuario;
   Pg pg;
-  int idProgresso;
+  int idProgresso, initialPage;
   Modulos modulo;
   Licaos licao;
 
   PageFlipBook({
     required this.usuario,
     required this.pg,
+    required this.initialPage,
     required this.idProgresso,
     required this.modulo,
     required this.licao,
@@ -39,14 +41,22 @@ class PageFlipBook extends StatefulWidget {
 class _PageFlipBookState extends State<PageFlipBook> {
   final _controller = GlobalKey<PageFlipWidgetState>();
 
+  final ValueNotifier<List<LicaoFlipPage>> licoesNotifier = ValueNotifier([]);
+
+  late LicoesRepository repository;
+
   final PgStore storePg = PgStore(
     repository: IFuncoesPHP(client: HttpClient()),
   );
 
   @override
   void initState() {
-    inserir_devocionais();
     super.initState();
+    inserir_devocionais();
+    repository = LicoesRepository();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      repository.carregarLicoes(context);
+    });
   }
 
   Future inserir_devocionais() async {
@@ -65,6 +75,7 @@ class _PageFlipBookState extends State<PageFlipBook> {
       '1',
       '0',
     );
+    //carregarLicoes(); // 🔥 recarrega páginas
   }
 
   @override
@@ -75,7 +86,9 @@ class _PageFlipBookState extends State<PageFlipBook> {
 
   @override
   Widget build(BuildContext context) {
-    List<LicaoFlipPage> licoes =
+    //final repository = Provider.of<LicoesRepository>(context).licoes;
+
+    /*List<LicaoFlipPage> licoes =
         storePg
             .getlicoesFlip(context)
             .where(
@@ -83,19 +96,42 @@ class _PageFlipBookState extends State<PageFlipBook> {
                   element.idModulo == widget.modulo.id &&
                   element.idLicao == widget.licao.nLicao,
             )
-            .toList();
+            .toList();*/
 
     //List<LicaoFlipPage> licoes_so_um = [licoes.last];
 
     return Scaffold(
-      body: PageFlipWidget(
-        key: _controller,
-        backgroundColor: Colors.white,
-        //isRightSwipe: true,
-        lastPage: lastPage(),
-        children: <Widget>[
-          for (var i = 0; i < licoes.length; i++) demoPage(context, licoes[i]),
-        ],
+      body: ValueListenableBuilder<List<LicaoFlipPage>>(
+        valueListenable: repository.licoesNotifier,
+        builder: (context, licoes, _) {
+          if (licoes.isEmpty) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          List<LicaoFlipPage> licao =
+              licoes
+                  .where(
+                    (element) =>
+                        element.idModulo == widget.modulo.id &&
+                        element.idLicao == widget.licao.nLicao,
+                  )
+                  .toList();
+
+          /*List<LicaoFlipPage> licao =
+              licoes
+                  .where(
+                    (element) => element.idModulo == 1 && element.idLicao == 2,
+                  )
+                  .toList();*/
+
+          return PageFlipWidget(
+            key: _controller,
+            backgroundColor: Colors.white,
+            lastPage: lastPage(),
+            initialIndex: widget.initialPage,
+            children: [for (var l in licao) demoPage(context, l)],
+          );
+        },
       ),
     );
   }
@@ -107,7 +143,7 @@ class _PageFlipBookState extends State<PageFlipBook> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('Lição Finalizada!', style: colorPrimaryBold30),
+          Text('Lição Finalizada!', style: colorPrimarySemiBold30),
           IconButton(
             onPressed: atualiza,
             color: Colors.white,
@@ -127,6 +163,9 @@ class _PageFlipBookState extends State<PageFlipBook> {
       widget.pg.idModulo.toString(),
       widget.pg.nLicao.toString(),
     );
+
+    //carregarLicoes(); // 🔥 recarrega páginas
+
     Navigator.push(
       context,
       MaterialPageRoute(

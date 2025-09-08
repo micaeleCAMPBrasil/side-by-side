@@ -4,8 +4,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:side_by_side/data/licao.dart';
-import 'package:side_by_side/data/licao_detalhada.dart';
 import 'package:side_by_side/model/devocional.dart';
 import 'package:side_by_side/model/geral.dart';
 import 'package:side_by_side/model/licao.dart';
@@ -17,6 +15,17 @@ import 'package:side_by_side/screens/criancas/AAddChildrenScreen.dart';
 import 'package:side_by_side/utils/exceptions.dart';
 import 'package:side_by_side/utils/http_client.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+String tamanho(double largura) {
+  debugPrint('Largura do Dispositivo: $largura');
+  return largura <= 380
+      ? "celular_pequeno"
+      : largura <= 600
+      ? "celular_grande"
+      : largura <= 1024
+      ? "tablet"
+      : "computador";
+}
 
 List<Modulos> getModulos() {
   List<Modulos> MODULOS_LIST = [
@@ -170,7 +179,7 @@ abstract class IFuncoes {
   );
 
   Future<List<Licaos>> getLicoes();
-  List<LicaoFlipPage> licoesFlip(BuildContext context);
+  //List<LicaoFlipPage> licoesFlip(BuildContext context);
   List<Devocional> getDevocionais();
 
   Future<bool> updateProgresso(
@@ -302,7 +311,7 @@ class IFuncoesPHP implements IFuncoes {
     }
   }
 
-  @override
+  /*@override
   List<LicaoFlipPage> licoesFlip(BuildContext context) {
     final licoes_data = licoesModulos(context);
 
@@ -317,10 +326,10 @@ class IFuncoesPHP implements IFuncoes {
       ...licoes_data.licao_trilha_6,
       ...licoes_data.licao_trilha_7,
       ...licoes_data.licao_trilha_8,
+      ...licoes_data.licao_mergulho_1,
     ];
-
     return licoes;
-  }
+  }*/
 
   @override
   List<Devocional> getDevocionais() {

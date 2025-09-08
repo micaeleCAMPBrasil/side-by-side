@@ -309,7 +309,7 @@ class _AHomeFragmentState extends State<AHomeFragment> {
                 left: 16,
                 child: SizedBox(
                   height: 40,
-                  width: 156,
+                  //width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white24.withOpacity(0.25),

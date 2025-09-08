@@ -7,15 +7,15 @@ import 'package:side_by_side/utils/AColors.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 import 'package:side_by_side/utils/auth_check.dart';
 
-class pwaInstallPage extends StatefulWidget {
-  const pwaInstallPage({super.key});
+class PwaInstallPage extends StatefulWidget {
+  const PwaInstallPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _pwaInstallPageState createState() => _pwaInstallPageState();
+  _PwaInstallPageState createState() => _PwaInstallPageState();
 }
 
-class _pwaInstallPageState extends State<pwaInstallPage> {
+class _PwaInstallPageState extends State<PwaInstallPage> {
   bool canInstall = false;
   bool isIos = false;
 

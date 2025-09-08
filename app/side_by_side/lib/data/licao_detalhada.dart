@@ -255,6 +255,7 @@ class PageLicao {
 class ImagensLicao {
   String? imagem;
   ConfiguracaoImagem? configuracaoImagem;
+
   ImagensLicao({this.imagem, this.configuracaoImagem});
 }
 

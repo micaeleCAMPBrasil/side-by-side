@@ -64,12 +64,14 @@ class _CheckUserLoggedInOrNotState extends State<CheckUserLoggedInOrNot> {
 
         if (token != null && token.isNotEmpty) {
           usuario.tokenAlert = token;
-          Provider.of<UsuarioProvider>(
-            context,
-            listen: false,
-          ).updateUsuario(usuario);
-          await storeUser.update_token(usuario);
+        } else {
+          usuario.tokenAlert = "carregando...";
         }
+        Provider.of<UsuarioProvider>(
+          context,
+          listen: false,
+        ).updateUsuario(usuario);
+        await storeUser.update_token(usuario);
 
         Provider.of<PgProvider>(context, listen: false).updatePg(pg);
         Provider.of<PgProvider>(context, listen: false).updateLicoes(pg);
