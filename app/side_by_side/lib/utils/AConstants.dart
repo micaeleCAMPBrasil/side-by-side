@@ -144,6 +144,30 @@ TextStyle colorSecondaryBold14 = const TextStyle(
 );
 
 /*WHITE*/
+TextStyle colorWhiteBold40 = const TextStyle(
+  fontSize: 40,
+  color: appTextColorWhite,
+  fontFamily: 'B',
+);
+
+TextStyle colorWhiteBold25 = const TextStyle(
+  fontSize: 25,
+  color: appTextColorWhite,
+  fontFamily: 'B',
+);
+
+TextStyle colorWhiteSemiBold45 = const TextStyle(
+  fontSize: 45,
+  color: appTextColorWhite,
+  fontFamily: 'SB',
+);
+
+TextStyle colorWhiteSemiBold25 = const TextStyle(
+  fontSize: 25,
+  color: appTextColorWhite,
+  fontFamily: 'SB',
+);
+
 TextStyle colorWhiteBoldTitulo45 = const TextStyle(
   fontSize: 45,
   color: appTextColorWhite,

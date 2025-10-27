@@ -1614,14 +1614,14 @@ class licoesModulos {
               top: size.height * 0.1,
             ),
           ),
-          ImagensLicao(
+          /*ImagensLicao(
             imagem: 'assets/image/icons/32.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
               height: size.height,
               top: size.height * 0.1,
             ),
-          ),
+          ),*/
         ],
         textos: [
           TextosLicao(
@@ -1644,9 +1644,9 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'A Noé, porém, o Senhor mostrou benevolência. Esta é a história da família de Noé: Noé era homem justo, íntegro entre o povo da sua época; ele andava com Deus. Gênesis 6:8-9',
+                'A maldade estava por toda parte. Mas e nos dias de hoje? Quando Deus observa os homens, as mulheres, as crianças, o que você acha que Ele sente?',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBoldItalic30,
+              style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
               top: size.height * 0.25,
               left: size.width * 0.1,
@@ -1663,63 +1663,6 @@ class licoesModulos {
       page: PageLicao(
         id: 9,
         backgroundPage: Color(0xff6fa6aa),
-        imagens: [
-          ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.6,
-              top: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/32.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
-            ),
-          ),
-        ],
-        textos: [
-          TextosLicao(
-            texto: 'Aventura 7',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.05,
-            ),
-          ),
-          TextosLicao(
-            texto: 'O Dilúvio',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold25,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.08,
-            ),
-          ),
-          TextosLicao(
-            texto:
-                'No meio de todas as pessoas que estavam longe de Deus, havia um homem diferente! Ele an- dava com Deus! Deus então o escolheu para uma grande missão. O que você acha que é andar com Deus?',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold30,
-              textAlign: TextAlign.center,
-              top: size.height * 0.2,
-              left: size.width * 0.1,
-            ),
-          ),
-        ],
-      ),
-    ),
-    // carta náutica 1 - 8
-    LicaoFlipPage(
-      idModulo: 2,
-      idLicao: 7,
-      nivel: 2,
-      page: PageLicao(
-        id: 10,
-        backgroundPage: Color(0xffcccccc),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -1758,11 +1701,68 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'Noé foi o responsável por construir a arca, um grande barco. Deus iria enviar um dilúvio, uma chuva enorme, para destruir toda a terra.',
+                'Você acha que Ele está contente? O homem quer fazer do jeito de Deus? Cada um quer fazer somente a sua vontade, como era naquele tempo. Mas Deus viu que havia alguém diferente:',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.3,
+              top: size.height * 0.2,
+              left: size.width * 0.1,
+            ),
+          ),
+        ],
+      ),
+    ),
+    // carta náutica 1 - 8
+    LicaoFlipPage(
+      idModulo: 2,
+      idLicao: 7,
+      nivel: 2,
+      page: PageLicao(
+        id: 10,
+        backgroundPage: Color(0xffcccccc),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/linha.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.6,
+              top: size.height * 0.1,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/32.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              top: size.height * 0.1,
+            ),
+          ),
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 7',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimaryBold20,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.05,
+            ),
+          ),
+          TextosLicao(
+            texto: 'O Dilúvio',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimaryBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.08,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'A Noé, porém, o Senhor mostrou benevolência. Esta é a história da família de Noé: Noé era homem justo, íntegro entre o povo da sua época; ele andava com Deus. Gênesis 6:8-9',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimarySemiBoldItalic30,
+              textAlign: TextAlign.center,
+              top: size.height * 0.25,
               left: size.width * 0.1,
             ),
           ),
@@ -1815,11 +1815,11 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'Noé obedeceu à ordem de Deus, construiu a arca e antes do dilúvio...',
+                'No meio de todas as pessoas que estavam longe de Deus, havia um homem diferente! Ele andava com Deus! Deus então o escolheu para uma grande missão. O que você acha que é andar com Deus?',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.3,
+              top: size.height * 0.2,
               left: size.width * 0.1,
             ),
           ),
@@ -1872,7 +1872,7 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'Deus colocou um casal de cada espécie de animal na arca, junto com a família de Noé, para que eles fossem salvos.',
+                'Noé foi o responsável por construir a arca, um grande barco. Deus iria enviar um dilúvio, uma chuva enorme, para destruir toda a terra.',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
@@ -1929,11 +1929,11 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'No meio de todas as pessoas que estavam longe de Deus, havia um homem diferente! Ele an- dava com Deus! Deus então o escolheu para uma grande missão. O que você acha que é andar com Deus?',
+                'Noé obedeceu à ordem de Deus, construiu a arca e antes do dilúvio...',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.2,
+              top: size.height * 0.3,
               left: size.width * 0.1,
             ),
           ),
@@ -1986,7 +1986,7 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'O dilúvio veio! Depois de muitos dias dentro da arca, a família de Noé finalmente pode sair, porque já tinha terra seca.',
+                'Deus colocou um casal de cada espécie de animal na arca, junto com a família de Noé, para que eles fossem salvos.',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
@@ -2004,6 +2004,63 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 15,
+        backgroundPage: Color(0xffcccccc),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/linha.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.6,
+              top: size.height * 0.1,
+            ),
+          ),
+          /*ImagensLicao(
+            imagem: 'assets/image/icons/32.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              top: size.height * 0.1,
+            ),
+          ),*/
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 7',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimaryBold20,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.05,
+            ),
+          ),
+          TextosLicao(
+            texto: 'O Dilúvio',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimaryBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.08,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'O dilúvio veio! Depois de muitos dias dentro da arca, a família de Noé finalmente pode sair, porque já tinha terra seca.',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimarySemiBold30,
+              textAlign: TextAlign.center,
+              top: size.height * 0.3,
+              left: size.width * 0.1,
+            ),
+          ),
+        ],
+      ),
+    ),
+    // carta náutica 1 - 14
+    LicaoFlipPage(
+      idModulo: 2,
+      idLicao: 7,
+      nivel: 2,
+      page: PageLicao(
+        id: 16,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -2054,13 +2111,13 @@ class licoesModulos {
         ],
       ),
     ),
-    // carta náutica 1 - 14
+    // carta náutica 1 - 15
     LicaoFlipPage(
       idModulo: 2,
       idLicao: 7,
       nivel: 2,
       page: PageLicao(
-        id: 16,
+        id: 17,
         backgroundPage: Color(0xffcccccc),
         imagens: [
           ImagensLicao(
@@ -2111,13 +2168,13 @@ class licoesModulos {
         ],
       ),
     ),
-    // carta náutica 1 - 15
+    // carta náutica 1 - 16
     LicaoFlipPage(
       idModulo: 2,
       idLicao: 7,
       nivel: 2,
       page: PageLicao(
-        id: 17,
+        id: 18,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -2174,7 +2231,7 @@ class licoesModulos {
       idLicao: 7,
       nivel: 3,
       page: PageLicao(
-        id: 18,
+        id: 19,
         backgroundPage: Color(0xffcccccc),
         imagens: [
           ImagensLicao(
@@ -2241,7 +2298,7 @@ class licoesModulos {
       idLicao: 7,
       nivel: 4,
       page: PageLicao(
-        id: 19,
+        id: 20,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -4018,7 +4075,7 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 5,
-        backgroundPage: Color(0xffcccccc),
+        backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -4028,11 +4085,11 @@ class licoesModulos {
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mulher_2.png',
+            imagem: 'assets/image/icons/cruz_2.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 1.2,
+              width: size.width,
               height: size.height,
-              left: 0,
+              top: size.height * 0.1,
             ),
           ),
         ],
@@ -4053,6 +4110,16 @@ class licoesModulos {
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top: size.height * 0.08,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'Deus prometeu que enviaria um descendente da mulher para ferir a cabeça da serpente. Quem era a serpente? O que acontece quando você fere a cabeça de uma serpente? Deus estava prometendo destruir Satanás...',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimarySemiBold30,
+              textAlign: TextAlign.center,
+              top: size.height * 0.2,
+              left: size.width * 0.1,
             ),
           ),
         ],
@@ -4104,7 +4171,7 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'Deus prometeu que enviaria um descendente da mulher para ferir a cabeça da serpente. Quem era a serpente? O que acontece quando você fere a cabeça de uma serpente? Deus estava prometendo destruir Satanás...',
+                'Através de um descendente especial de uma mulher. Muitos anos depois dessa promessa, quando muitos já achavam que Deus havia se esquecido, Deus enviou seu Filho Perfeito, Jesus Cristo, para ser o Salvador do mundo.',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
@@ -4122,110 +4189,6 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 7,
-        backgroundPage: Color(0xff6fa6aa),
-        imagens: [
-          ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.6,
-              top: size.height * 0.12,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/cruz_2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
-            ),
-          ),
-        ],
-        textos: [
-          TextosLicao(
-            texto: 'Aventura 4',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.05,
-            ),
-          ),
-          TextosLicao(
-            texto: 'A Promessa de um Salvador',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold25,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.08,
-            ),
-          ),
-          TextosLicao(
-            texto:
-                'Através de um descendente especial de uma mulher. Muitos anos depois dessa promessa, quando muitos já achavam que Deus havia se esquecido, Deus enviou seu Filho Perfeito, Jesus Cristo, para ser o Salvador do mundo.',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold30,
-              textAlign: TextAlign.center,
-              top: size.height * 0.2,
-              left: size.width * 0.1,
-            ),
-          ),
-        ],
-      ),
-    ),
-    // carta náutica 1 - 6
-    LicaoFlipPage(
-      idModulo: 2,
-      idLicao: 4,
-      nivel: 2,
-      page: PageLicao(
-        id: 8,
-        backgroundPage: Color(0xffcccccc),
-        imagens: [
-          ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.6,
-              top: size.height * 0.12,
-            ),
-          ),
-          /*ImagensLicao(
-            imagem: 'assets/image/icons/16.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
-            ),
-          ),*/
-        ],
-        textos: [
-          TextosLicao(
-            texto: 'Aventura 4',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.05,
-            ),
-          ),
-          TextosLicao(
-            texto: 'A Promessa de um Salvador',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold25,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.08,
-            ),
-          ),
-        ],
-      ),
-    ),
-    // carta náutica 1 - 7
-    LicaoFlipPage(
-      idModulo: 2,
-      idLicao: 4,
-      nivel: 2,
-      page: PageLicao(
-        id: 9,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -4276,13 +4239,13 @@ class licoesModulos {
         ],
       ),
     ),
-    // carta náutica 1 - 8
+    // carta náutica 1 - 6
     LicaoFlipPage(
       idModulo: 2,
       idLicao: 4,
       nivel: 2,
       page: PageLicao(
-        id: 10,
+        id: 8,
         backgroundPage: Color(0xffcccccc),
         imagens: [
           ImagensLicao(
@@ -4333,13 +4296,13 @@ class licoesModulos {
         ],
       ),
     ),
-    // carta náutica 1 - 9
+    // carta náutica 1 - 7
     LicaoFlipPage(
       idModulo: 2,
       idLicao: 4,
       nivel: 2,
       page: PageLicao(
-        id: 11,
+        id: 9,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -4390,13 +4353,13 @@ class licoesModulos {
         ],
       ),
     ),
-    // carta náutica 1 - 10
+    // carta náutica 1 - 8
     LicaoFlipPage(
       idModulo: 2,
       idLicao: 4,
       nivel: 2,
       page: PageLicao(
-        id: 12,
+        id: 10,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -4453,7 +4416,7 @@ class licoesModulos {
       idLicao: 4,
       nivel: 3,
       page: PageLicao(
-        id: 13,
+        id: 11,
         backgroundPage: Color(0xff6fa6aa),
         imagens: [
           ImagensLicao(
@@ -4520,7 +4483,7 @@ class licoesModulos {
       idLicao: 4,
       nivel: 4,
       page: PageLicao(
-        id: 14,
+        id: 12,
         backgroundPage: Color(0xffcccccc),
         imagens: [
           ImagensLicao(
@@ -10704,7 +10667,7 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 6,
-        backgroundPage: Color(0xffdfad3d),
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -10769,7 +10732,7 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 7,
-        backgroundPage: Color(0xffdfad3d),
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -10834,7 +10797,7 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 8,
-        backgroundPage: Color(0xffdfad3d),
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -10881,7 +10844,7 @@ class licoesModulos {
       nivel: 2,
       page: PageLicao(
         id: 9,
-        backgroundPage: Color(0xffdfad3d),
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
             imagem: 'assets/image/icons/linha.png',
@@ -12842,6 +12805,70 @@ class licoesModulos {
             ),
           ),
           ImagensLicao(
+            imagem: 'assets/image/icons/licoes/03/2-2.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              bottom: size.height * 0.15,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/fruta_1.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              top: size.height * 0.05,
+            ),
+          ),
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 3',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimaryBold20,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.05,
+            ),
+          ),
+          TextosLicao(
+            texto: 'O Segundo e o Terceiro dia',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimarySemiBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top: size.height * 0.08,
+            ),
+          ),
+        ],
+      ),
+    ),
+    // mapa da trilha 2 - 9
+    LicaoFlipPage(
+      idModulo: 1,
+      idLicao: 3,
+      nivel: 2,
+      page: PageLicao(
+        id: 13,
+        backgroundPage: Color(0xff739e59),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/linha_3.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              bottom: size.height * 0.1,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/planta.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width,
+              height: size.height,
+              top: size.height * 0.1,
+            ),
+          ),
+          ImagensLicao(
             imagem: 'assets/image/icons/fruta_1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
@@ -12877,70 +12904,6 @@ class licoesModulos {
               textAlign: TextAlign.center,
               top: size.height * 0.35,
               left: size.width * 0.1,
-            ),
-          ),
-        ],
-      ),
-    ),
-    // mapa da trilha 2 - 9
-    LicaoFlipPage(
-      idModulo: 1,
-      idLicao: 3,
-      nivel: 2,
-      page: PageLicao(
-        id: 13,
-        backgroundPage: Color(0xff739e59),
-        imagens: [
-          ImagensLicao(
-            imagem: 'assets/image/icons/linha_3.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/planta.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/03/2-2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.15,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/fruta_1.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.05,
-            ),
-          ),
-        ],
-        textos: [
-          TextosLicao(
-            texto: 'Aventura 3',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.05,
-            ),
-          ),
-          TextosLicao(
-            texto: 'O Segundo e o Terceiro dia',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
-              textAlign: TextAlign.center,
-              left: size.width * 0.1,
-              top: size.height * 0.08,
             ),
           ),
         ],
@@ -13255,20 +13218,22 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/luz.png',
+            imagem: 'assets/image/icons/novos/27.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.8,
-              top: size.height * 0.1,
-              left: size.width * 0.05,
-              height: size.height,
+              width: size.width * 0.5,
+              top: size.height * 0.75,
+              left: 0,
             ),
           ),
         ],
@@ -13276,18 +13241,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13327,46 +13304,56 @@ class licoesModulos {
         backgroundPage: Color(0xffdfad3d),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/planetas.png',
+            imagem: 'assets/image/icons/novos/28.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.7,
-              top: size.height * 0.18,
+              width: size.height * 0.3,
+              top: size.height * 0.1,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/ponto_de_interrogacao.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.05,
-            ),
+            imagem: 'assets/image/icons/novos/29.png',
+            configuracaoImagem: ConfiguracaoImagem(bottom: 0, right: 0),
           ),
         ],
         textos: [
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13393,27 +13380,29 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_mapa.png',
+            imagem: 'assets/image/icons/novos/31.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.05,
+              width: size.width * 0.5,
+              top: size.height * 0.13,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/biblia_2.png',
+            imagem: 'assets/image/icons/novos/15.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.11,
+              width: size.width * 0.7,
+              bottom: 0,
+              left: size.width * 0.13,
             ),
           ),
         ],
@@ -13421,18 +13410,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13455,7 +13456,7 @@ class licoesModulos {
             ),
           ),
           TextosLicao(
-            texto: 'No princípio Deus criou os céus e a terra. Gênesis 1:1',
+            texto: 'No princípio Deus criou os céus e a terra.\nGênesis 1:1',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBoldItalic30,
               textAlign: TextAlign.center,
@@ -13476,27 +13477,22 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_mapa.png',
+            imagem: 'assets/image/icons/novos/33.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
-              height: size.height,
-              top: size.height * 0.05,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/biblia_2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.11,
+              //top: size.height * 0.11,
+              bottom: 0,
             ),
           ),
         ],
@@ -13504,28 +13500,31 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
-            ),
-          ),
-          TextosLicao(
-            texto: 'Mapa da trilha',
-            configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold25,
-              textAlign: TextAlign.center,
-              left: size.width * 0.2,
-              top: size.height * 0.23,
             ),
           ),
           TextosLicao(
@@ -13534,8 +13533,8 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.35,
-              left: size.width * 0.05,
+              top: size.height * 0.25,
+              left: size.width * 0.07,
             ),
           ),
         ],
@@ -13551,27 +13550,22 @@ class licoesModulos {
         backgroundPage: Color(0xffdfad3d),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/4.png',
+            imagem: 'assets/image/icons/novos/34.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/5.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
+              width: size.width * 0.8,
+              left: size.width * 0.12,
+              bottom: 0,
             ),
           ),
         ],
@@ -13579,18 +13573,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13600,7 +13606,7 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.2,
+              top: size.height * 0.22,
               left: size.width * 0.1,
             ),
           ),
@@ -13617,35 +13623,26 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/agua.png',
+            imagem: 'assets/image/icons/novos/35.png',
+            configuracaoImagem: ConfiguracaoImagem(top: 0),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/36.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/mancha_1.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.15,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/mancha_2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.15,
+              //width: size.width * 0.7,
+              bottom: 0,
+              //top: size.height * 0.15,
             ),
           ),
         ],
@@ -13653,18 +13650,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13691,35 +13700,25 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/35.png',
+            configuracaoImagem: ConfiguracaoImagem(top: 0),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/agua.png',
+            imagem: 'assets/image/icons/novos/37.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/mancha_1.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.15,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/mancha_2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.15,
+              bottom: 0,
             ),
           ),
         ],
@@ -13727,18 +13726,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13763,21 +13774,17 @@ class licoesModulos {
       page: PageLicao(
         id: 8,
         backgroundPage: Color(0xff976126),
+        imagemPage: 'assets/image/icons/novos/38.png',
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/02/1.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.02,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
         ],
@@ -13785,18 +13792,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13813,27 +13832,26 @@ class licoesModulos {
         backgroundPage: Color(0xffdfad3d),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mancha_3.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
+            imagem: 'assets/image/icons/novos/39.png',
+            configuracaoImagem: ConfiguracaoImagem(width: size.width, top: 0),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/ponto_de_interrogacao_2.png',
+            imagem: 'assets/image/icons/novos/40.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              left: size.width * 0.1,
+              width: size.width * 0.5,
+              right: 0,
+              bottom: 0,
             ),
           ),
         ],
@@ -13841,18 +13859,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13879,35 +13909,25 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mancha_4.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
+            imagem: 'assets/image/icons/novos/42.png',
+            configuracaoImagem: ConfiguracaoImagem(height: size.height, top: 0),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/boca.png',
+            imagem: 'assets/image/icons/novos/41.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/haja_luz.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
+              bottom: 0,
             ),
           ),
         ],
@@ -13915,18 +13935,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -13953,35 +13985,25 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mancha_4.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
-            ),
+            imagem: 'assets/image/icons/novos/42.png',
+            configuracaoImagem: ConfiguracaoImagem(height: size.height, top: 0),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/boca.png',
+            imagem: 'assets/image/icons/novos/43.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/haja_luz.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height * 0.8,
-              top: size.height * 0.2,
+              width: size.width * 0.8,
+              bottom: 0,
             ),
           ),
         ],
@@ -13989,18 +14011,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14027,19 +14061,32 @@ class licoesModulos {
         backgroundPage: Color(0xffdfad3d),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mao.png',
+            imagem: 'assets/image/icons/novos/23.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
+              height: size.height * 0.2,
+              right: 0,
+              bottom: 0,
+              //top: size.height * 0.13,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/24.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              height: size.height * 0.2,
+              left: 0,
+              bottom: 0,
+              //top: size.height * 0.13,
             ),
           ),
         ],
@@ -14047,23 +14094,35 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
           TextosLicao(
-            texto: 'Fazendo as malas',
+            texto: 'Fazendo as malas: Oração',
             configuracaoTexto: ConfiguracaoTexto(
               alignment: Alignment.topLeft,
               style: colorPrimaryBold25,
@@ -14074,7 +14133,7 @@ class licoesModulos {
           ),
           TextosLicao(
             texto:
-                'Oração:\nDeus nós te agradecemos por ter feito os céus, a terra e a luz para que todas as outras coisas pudessem existir e para podermos enxergar tudo que está ao nosso redor.',
+                'Deus nós te agradecemos por ter feito os céus, a terra e a luz para que todas as outras coisas pudessem existir e para podermos enxergar tudo que está ao nosso redor.',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
@@ -14095,27 +14154,30 @@ class licoesModulos {
         backgroundPage: Color(0xff976126),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha_2.png',
+            imagem: 'assets/image/icons/novos/25.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              bottom: size.height * 0.1,
+              width: size.width * 0.5,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.13,
+              right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/biblia_3.png',
+            imagem: 'assets/image/icons/novos/44.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width,
-              height: size.height,
-              top: size.height * 0.05,
+              height: size.height * 0.5,
+              top: size.height * 0.13,
+              left: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/infinito_2.png',
+            imagem: 'assets/image/icons/novos/15.png',
             configuracaoImagem: ConfiguracaoImagem(
+              height: size.height * 0.3,
+              top: size.height * 0.75,
               width: size.width,
-              height: size.height,
-              top: size.height * 0.1,
             ),
           ),
         ],
@@ -14123,22 +14185,33 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 2',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus criou os céus e a terra - O primeiro dia',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
-
           TextosLicao(
             texto: 'Fazendo as malas',
             configuracaoTexto: ConfiguracaoTexto(
@@ -14237,29 +14310,29 @@ class licoesModulos {
         backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/olho.png',
+            imagem: 'assets/image/icons/novos/2.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.3,
+              width: size.width * 0.5,
               height: size.height * 0.3,
-              top: size.height * 0.09,
-              left: size.width * 0.6,
+              bottom: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/bussula.png',
+            imagem: 'assets/image/icons/novos/3.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.35,
-              height: size.height * 0.35,
+              width: size.width * 0.5,
+              height: size.height * 0.3,
+              right: 0,
               bottom: 0,
             ),
           ),
@@ -14269,7 +14342,7 @@ class licoesModulos {
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14277,7 +14350,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14291,7 +14364,7 @@ class licoesModulos {
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
-                      : size.height * 0.08,
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14331,38 +14404,32 @@ class licoesModulos {
         backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/1.png',
+            imagem: 'assets/image/icons/novos/6.png',
+            configuracaoImagem: ConfiguracaoImagem(bottom: 0, right: 0),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/5.png',
             configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.2,
+              top: size.height * 0.3,
+              width: check == 'tablet' ? size.width * 0.35 : size.width * 0.6,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/4.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              top: size.height * 0.35,
+              width: check == 'tablet' ? size.width * 0.55 : size.width * 0.5,
               right: 0,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/01/v_1.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: check == 'tablet' ? size.width * 0.35 : size.width * 0.55,
-              height: size.height * 0.5,
-              top: size.height * 0.15,
-              left: check == 'tablet' ? size.width * 0.3 : size.width * 0.2,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/01/v_2.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: check == 'tablet' ? size.width * 0.55 : size.width * 0.75,
-              height: size.height * 0.4,
-              top: size.height * 0.55,
-              left: check == 'tablet' ? size.width * 0.22 : size.width * 0.15,
             ),
           ),
         ],
@@ -14371,7 +14438,7 @@ class licoesModulos {
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14379,7 +14446,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14393,7 +14460,7 @@ class licoesModulos {
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
-                      : size.height * 0.08,
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14409,29 +14476,29 @@ class licoesModulos {
         backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/2.png',
+            imagem: 'assets/image/icons/novos/7.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.27,
+              //height: size.height * 0.27,
+              //left: size.width * 0.1,
               bottom: 0,
-              left: size.width * 0.1,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/engrenagem.png',
+            imagem: 'assets/image/icons/novos/8.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.22,
+              //height: size.height * 0.22,
               bottom: 0,
-              right: size.width * 0.05,
+              right: 0,
             ),
           ),
         ],
@@ -14440,8 +14507,7 @@ class licoesModulos {
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
-
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14449,7 +14515,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14463,18 +14529,18 @@ class licoesModulos {
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
-                      : size.height * 0.08,
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
           TextosLicao(
             texto:
-                'A cada dia objetos novos são inventados, e você sabe quem os inventa? O que é um inventor? É uma pessoa que inventa coisas que nunca foram vistas antes. Pode me dizer o nome de algumas invenções? Como será que uma invenção é feita?',
+                'A cada dia objetos novos são inventados, e você sabe quem os inventa? O que é um inventor? É uma pessoa que inventa coisas que nunca foram vistas antes.',
             configuracaoTexto: ConfiguracaoTexto(
               style:
                   check == 'tablet'
-                      ? colorPrimarySemiBold45
-                      : colorPrimarySemiBold25,
+                      ? colorPrimarySemiBold60
+                      : colorPrimarySemiBold30,
               textAlign: TextAlign.center,
               top: check == 'tablet' ? size.height * 0.25 : size.height * 0.2,
               left: size.width * 0.1,
@@ -14489,32 +14555,24 @@ class licoesModulos {
       nivel: 1,
       page: PageLicao(
         id: 4,
-        backgroundPage: Color(0xff739e59),
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/2.png',
+            imagem: 'assets/image/icons/novos/9.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.27,
+              //height: size.height * 0.27,
+              //left: size.width * 0.1,
               bottom: 0,
-              left: size.width * 0.1,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/engrenagem.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.22,
-              bottom: 0,
-              right: size.width * 0.05,
             ),
           ),
         ],
@@ -14523,8 +14581,7 @@ class licoesModulos {
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
-
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14532,7 +14589,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14546,18 +14603,18 @@ class licoesModulos {
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
-                      : size.height * 0.08,
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
           TextosLicao(
             texto:
-                'Como esse celular foi feito? O que acham? Eu acho que precisa de um plano, um desenho, experiências, colocar as peças juntas. Você acha que precisa de alguém inteligente? E o que você acha do céu? Alguém fez? E a terra? Será que foi alguém? Como podemos saber?',
+                'Pode me dizer o nome de algumas invenções? Como será que uma invenção é feita? Como esse celular foi feito? O que acham?',
             configuracaoTexto: ConfiguracaoTexto(
               style:
                   check == 'tablet'
-                      ? colorPrimarySemiBold45
-                      : colorPrimarySemiBold25,
+                      ? colorPrimarySemiBold60
+                      : colorPrimarySemiBold30,
               textAlign: TextAlign.center,
               top: check == 'tablet' ? size.height * 0.25 : size.height * 0.2,
               left: size.width * 0.1,
@@ -14569,35 +14626,24 @@ class licoesModulos {
     LicaoFlipPage(
       idModulo: 1,
       idLicao: 1,
-      nivel: 2, // mapa da trilha
+      nivel: 1,
       page: PageLicao(
         id: 5,
-        backgroundPage: Color(0xffe1d434),
+        backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/mapadatrilha.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.3,
-              top: size.height * 0.17,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/terra.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              width: size.width * 0.3,
-              bottom: 0,
-              right: 0,
-            ),
+            imagem: 'assets/image/icons/novos/10.png',
+            configuracaoImagem: ConfiguracaoImagem(bottom: 0),
           ),
         ],
         textos: [
@@ -14605,8 +14651,7 @@ class licoesModulos {
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
-
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14614,7 +14659,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14628,7 +14673,158 @@ class licoesModulos {
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
+                      : size.height * 0.07,
+              left: size.width * 0.1,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'Eu acho que precisa de um plano, um desenho, experiências, colocar as peças juntas. Você acha que precisa de alguém inteligente?',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold60
+                      : colorPrimarySemiBold30,
+              textAlign: TextAlign.center,
+              top: check == 'tablet' ? size.height * 0.25 : size.height * 0.25,
+              left: size.width * 0.1,
+            ),
+          ),
+        ],
+      ),
+    ),
+    LicaoFlipPage(
+      idModulo: 1,
+      idLicao: 1,
+      nivel: 1,
+      page: PageLicao(
+        id: 6,
+        backgroundPage: Color(0xffe1d434),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/1.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.6,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
                       : size.height * 0.08,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/11.png',
+            configuracaoImagem: ConfiguracaoImagem(bottom: 0),
+          ),
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 1',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
+            ),
+          ),
+          TextosLicao(
+            texto: 'Deus existe!',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
+              textAlign: TextAlign.center,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
+              left: size.width * 0.1,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'E o que você acha do céu? Alguém fez? E a terra? Será que foi alguém? Como podemos saber?',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold60
+                      : colorPrimarySemiBold30,
+              textAlign: TextAlign.center,
+              top: check == 'tablet' ? size.height * 0.25 : size.height * 0.25,
+              left: size.width * 0.1,
+            ),
+          ),
+        ],
+      ),
+    ),
+    LicaoFlipPage(
+      idModulo: 1,
+      idLicao: 1,
+      nivel: 2, // mapa da trilha
+      page: PageLicao(
+        id: 7,
+        backgroundPage: Color(0xff739e59),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/1.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.6,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/12.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.35,
+              top: size.height * 0.17,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/13.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              //width: size.width * 0.6,
+              bottom: 0,
+              right: 0,
+            ),
+          ),
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 1',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
+            ),
+          ),
+          TextosLicao(
+            texto: 'Deus existe!',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
+              textAlign: TextAlign.center,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14639,7 +14835,7 @@ class licoesModulos {
                   check == 'tablet' ? colorPrimaryBold45 : colorPrimaryBold25,
               textAlign: TextAlign.justify,
               left: size.width * 0.25,
-              top: size.height * 0.2,
+              top: size.height * 0.23,
             ),
           ),
           TextosLicao(
@@ -14655,7 +14851,7 @@ class licoesModulos {
             ),
           ),
           TextosLicao(
-            texto: 'No princípio Deus criou os céus e a terra. Gênesis 1:1',
+            texto: 'No princípio Deus criou os céus e a terra.\nGênesis 1:1',
             configuracaoTexto: ConfiguracaoTexto(
               style:
                   check == 'tablet'
@@ -14676,43 +14872,32 @@ class licoesModulos {
       page: PageLicao(
         id: 6,
         backgroundPage: Color(0xff739e59),
+        imagemPage: 'assets/image/icons/novos/14.png',
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1_2.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
               top:
                   check == 'celular_pequeno' || check == 'tablet'
                       ? size.height * 0.06
-                      : size.height * 0.1,
+                      : size.height * 0.08,
             ),
           ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/01/v_3.png',
+          /*ImagensLicao(
+            imagem: 'assets/image/icons/novos/14.png',
             configuracaoImagem: ConfiguracaoImagem(
-              top: size.height * 0.2,
-              height: size.height * 0.35,
-              left: size.width * 0.05,
-              right: size.width * 0.05,
+              //top: size.height * 0.2,
+              //height: size.height,
+              //width: size.width,
             ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/licoes/01/v_4.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              top: size.height * 0.55,
-              height: size.height * 0.35,
-              left: size.width * 0.05,
-              right: size.width * 0.05,
-            ),
-          ),
+          ),*/
         ],
         textos: [
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style:
-                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold20,
-
+              style: check == 'tablet' ? colorWhiteBold40 : colorWhiteBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
               top:
@@ -14720,7 +14905,7 @@ class licoesModulos {
                       ? size.height * 0.01
                       : check == 'tablet'
                       ? size.height * 0.03
-                      : size.height * 0.05,
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
@@ -14728,13 +14913,13 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style:
                   check == 'tablet'
-                      ? colorPrimarySemiBold45
-                      : colorPrimarySemiBold25,
+                      ? colorWhiteSemiBold45
+                      : colorWhiteSemiBold25,
               textAlign: TextAlign.center,
               top:
                   check == 'celular_pequeno'
                       ? size.height * 0.05
-                      : size.height * 0.08,
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14750,26 +14935,29 @@ class licoesModulos {
         backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/biblia.png',
+            imagem: 'assets/image/icons/novos/15.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.08,
+              height: size.height * 0.15,
               top: size.height * 0.18,
               right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/montanha.png',
+            imagem: 'assets/image/icons/novos/16.png',
             configuracaoImagem: ConfiguracaoImagem(
               height: size.height * 0.3,
+              top: size.height * 0.75,
               width: size.width,
-              bottom: 0,
             ),
           ),
         ],
@@ -14777,18 +14965,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -14798,7 +14998,7 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
-              top: size.height * 0.3,
+              top: size.height * 0.35,
               left: size.width * 0.1,
             ),
           ),
@@ -14811,29 +15011,32 @@ class licoesModulos {
       nivel: 2, // mapa da trilha
       page: PageLicao(
         id: 8,
-        backgroundPage: Color(0xffe1d434),
+        backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/biblia.png',
+            imagem: 'assets/image/icons/novos/15.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.08,
+              height: size.height * 0.15,
               top: size.height * 0.18,
               right: 0,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/montanha.png',
+            imagem: 'assets/image/icons/novos/16.png',
             configuracaoImagem: ConfiguracaoImagem(
               height: size.height * 0.3,
+              top: size.height * 0.75,
               width: size.width,
-              bottom: 0,
             ),
           ),
         ],
@@ -14841,28 +15044,40 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
           TextosLicao(
             texto:
-                'Antes de nascerem os montes e de criares a terra e o mundo, de eternidade a eternidade tu és Deus. Salmos 90:2',
+                'Antes de nascerem os montes e de criares a terra e o mundo, de eternidade a eternidade tu és Deus.\nSalmos 90:2',
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBoldItalic30,
               textAlign: TextAlign.center,
-              top: size.height * 0.3,
+              top: size.height * 0.32,
               left: size.width * 0.1,
             ),
           ),
@@ -14878,25 +15093,20 @@ class licoesModulos {
         backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/biblia.png',
+            imagem: 'assets/image/icons/novos/21.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.08,
-              top: size.height * 0.18,
-              right: 0,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/montanha.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.3,
-              width: size.width,
+              width: size.width * 0.7,
+              left: size.width * 0.4,
               bottom: 0,
             ),
           ),
@@ -14905,26 +15115,38 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
           TextosLicao(
             texto:
-                'O que quer dizer de eternidade a eternidade? O que significa eterno? Algo que não tem princípio nem fim. Então, Deus sempre existiu! Muitas pessoas acham que Deus não existe, o que você acha? Como você acha que Deus é? Sem principio nem fim, como essa aliança.',
+                'O que quer dizer de eternidade a eternidade? O que significa eterno? Algo que não tem princípio nem fim. Então, Deus sempre existiu!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style: colorPrimarySemiBold30,
               textAlign: TextAlign.center,
               top: size.height * 0.25,
               left: size.width * 0.1,
@@ -14942,26 +15164,21 @@ class licoesModulos {
         backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/licoes/01/v_5.png',
-            configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.5,
-              top: size.height * 0.25,
-              left: size.width * 0.08,
-            ),
-          ),
-          ImagensLicao(
-            imagem: 'assets/image/icons/3.png',
+            imagem: 'assets/image/icons/novos/18.png',
             configuracaoImagem: ConfiguracaoImagem(
               height: size.height * 0.3,
-              bottom: 0,
-              right: 0,
+              width: size.width,
+              top: size.height * 0.72,
             ),
           ),
         ],
@@ -14969,18 +15186,40 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
+              left: size.width * 0.1,
+            ),
+          ),
+          TextosLicao(
+            texto:
+                'Muitas pessoas acham que Deus não existe, o que você acha? Como você acha que Deus é? Sem principio nem fim, como essa aliança.',
+            configuracaoTexto: ConfiguracaoTexto(
+              style: colorPrimarySemiBold30,
+              textAlign: TextAlign.center,
+              top: size.height * 0.25,
               left: size.width * 0.1,
             ),
           ),
@@ -14996,25 +15235,97 @@ class licoesModulos {
         backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/infinito.png',
+            imagem: 'assets/image/icons/novos/Espanhol.png',
             configuracaoImagem: ConfiguracaoImagem(
-              height: size.height * 0.15,
-              top: size.height * 0.18,
-              left: size.width * 0.25,
+              height: size.height * 0.5,
+              top: size.height * 0.25,
+              left: size.width * 0.08,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/Espanhol (2).png',
+            configuracaoImagem: ConfiguracaoImagem(
+              height: size.height * 0.3,
+              top: size.height * 0.72,
+              right: 0,
+            ),
+          ),
+        ],
+        textos: [
+          TextosLicao(
+            texto: 'Aventura 1',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
+              textAlign: TextAlign.center,
+              left: size.width * 0.1,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
+            ),
+          ),
+          TextosLicao(
+            texto: 'Deus existe!',
+            configuracaoTexto: ConfiguracaoTexto(
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
+              textAlign: TextAlign.center,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
+              left: size.width * 0.1,
+            ),
+          ),
+        ],
+      ),
+    ),
+    LicaoFlipPage(
+      idModulo: 1,
+      idLicao: 1,
+      nivel: 2, // mapa da trilha
+      page: PageLicao(
+        id: 12,
+        backgroundPage: Color(0xff739e59),
+        imagens: [
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/1.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              width: size.width * 0.6,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/21.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              height: size.height * 0.2,
+              top: size.height * 0.13,
+              left: size.width * 0.37,
             ),
           ),
           ImagensLicao(
             imagem: 'assets/image/icons/cruz.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width,
-              height: size.height * 0.4,
+              height: size.height * 0.3,
               bottom: 0,
             ),
           ),
@@ -15023,21 +15334,34 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
+
           TextosLicao(
             texto:
                 'Ele é o princípio e o fim de todas as coisas! (Diga às crianças quem é Deus para você).',
@@ -15056,22 +15380,35 @@ class licoesModulos {
       idLicao: 1,
       nivel: 3, // fazendo as malas
       page: PageLicao(
-        id: 12,
-        backgroundPage: Color(0xff739e59),
+        id: 13,
+        backgroundPage: Color(0xffe1d434),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/fazendoasmalas.png',
+            imagem: 'assets/image/icons/novos/23.png',
             configuracaoImagem: ConfiguracaoImagem(
               height: size.height * 0.2,
               right: 0,
-              top: size.height * 0.13,
+              bottom: 0,
+              //top: size.height * 0.13,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/24.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              height: size.height * 0.2,
+              left: 0,
+              bottom: 0,
+              //top: size.height * 0.13,
             ),
           ),
         ],
@@ -15079,18 +15416,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -15122,22 +15471,33 @@ class licoesModulos {
       idLicao: 1,
       nivel: 4, // versiculo
       page: PageLicao(
-        id: 13,
-        backgroundPage: Color(0xffe1d434),
+        id: 14,
+        backgroundPage: Color(0xff739e59),
         imagens: [
           ImagensLicao(
-            imagem: 'assets/image/icons/linha.png',
+            imagem: 'assets/image/icons/novos/1.png',
             configuracaoImagem: ConfiguracaoImagem(
               width: size.width * 0.6,
-              top: size.height * 0.1,
+              top:
+                  check == 'celular_pequeno' || check == 'tablet'
+                      ? size.height * 0.06
+                      : size.height * 0.08,
             ),
           ),
           ImagensLicao(
-            imagem: 'assets/image/icons/fazendoasmalas.png',
+            imagem: 'assets/image/icons/novos/23.png',
             configuracaoImagem: ConfiguracaoImagem(
+              bottom: 0,
               right: 0,
               height: size.height * 0.2,
-              top: size.height * 0.13,
+            ),
+          ),
+          ImagensLicao(
+            imagem: 'assets/image/icons/novos/26.png',
+            configuracaoImagem: ConfiguracaoImagem(
+              left: 0,
+              bottom: 0,
+              height: size.height * 0.2,
             ),
           ),
         ],
@@ -15145,18 +15505,30 @@ class licoesModulos {
           TextosLicao(
             texto: 'Aventura 1',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimaryBold20,
+              style:
+                  check == 'tablet' ? colorPrimaryBold40 : colorPrimaryBold25,
               textAlign: TextAlign.center,
               left: size.width * 0.1,
-              top: size.height * 0.05,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.01
+                      : check == 'tablet'
+                      ? size.height * 0.03
+                      : size.height * 0.03,
             ),
           ),
           TextosLicao(
             texto: 'Deus existe!',
             configuracaoTexto: ConfiguracaoTexto(
-              style: colorPrimarySemiBold25,
+              style:
+                  check == 'tablet'
+                      ? colorPrimarySemiBold45
+                      : colorPrimarySemiBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.08,
+              top:
+                  check == 'celular_pequeno'
+                      ? size.height * 0.05
+                      : size.height * 0.07,
               left: size.width * 0.1,
             ),
           ),
@@ -15175,7 +15547,7 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimaryBold25,
               textAlign: TextAlign.center,
-              top: size.height * 0.35,
+              top: size.height * 0.25,
               left: size.width * 0.1,
             ),
           ),
@@ -15185,7 +15557,7 @@ class licoesModulos {
             configuracaoTexto: ConfiguracaoTexto(
               style: colorPrimarySemiBoldItalic30,
               textAlign: TextAlign.center,
-              top: size.height * 0.45,
+              top: size.height * 0.35,
               left: size.width * 0.1,
             ),
           ),

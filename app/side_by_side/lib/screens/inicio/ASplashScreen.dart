@@ -7,6 +7,7 @@ import 'package:side_by_side/utils/auth_check.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 
+// ignore: must_be_immutable
 class ASplashScreen extends StatefulWidget {
   const ASplashScreen({super.key});
 
@@ -34,7 +35,7 @@ class _ASplashScreenState extends State<ASplashScreen> {
     } else {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CheckUserLoggedInOrNot()),
+        MaterialPageRoute(builder: (context) => CheckUserLoggedInOrNot()),
       );
     }
   }

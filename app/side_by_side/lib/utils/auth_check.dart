@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 import 'package:side_by_side/model/pg.dart';
 import 'package:side_by_side/model/usuario.dart';
@@ -12,8 +13,9 @@ import 'package:side_by_side/store/php.dart';
 import 'package:side_by_side/store/user_store.dart';
 import 'package:side_by_side/utils/auth_service.dart';
 import 'package:side_by_side/utils/http_client.dart';
-import 'package:side_by_side/utils/notification_service_web.dart';
+import 'package:side_by_side/utils/notification_service.dart';
 
+// ignore: must_be_immutable
 class CheckUserLoggedInOrNot extends StatefulWidget {
   const CheckUserLoggedInOrNot({super.key});
 
@@ -35,7 +37,7 @@ class _CheckUserLoggedInOrNotState extends State<CheckUserLoggedInOrNot> {
   void initState() {
     AuthService.isLoggedIn().then((value) async {
       if (value) {
-        await PushNotificationsWeb.init();
+        await PushNotifications.init(navigatorKey);
 
         User userFire = AuthService.gerarUserFirebase();
 
@@ -60,18 +62,20 @@ class _CheckUserLoggedInOrNotState extends State<CheckUserLoggedInOrNot> {
           '',
         );
 
-        final token = await PushNotificationsWeb.getToken();
-
-        if (token != null && token.isNotEmpty) {
-          usuario.tokenAlert = token;
+        if (usuario.tokenAlert == 'nao_autorizou') {
         } else {
-          usuario.tokenAlert = "carregando...";
+          final token = await PushNotifications.getToken();
+          if (token != null && token.isNotEmpty) {
+            usuario.tokenAlert = token;
+          } else {
+            usuario.tokenAlert = "nao_autorizou";
+          }
+          Provider.of<UsuarioProvider>(
+            context,
+            listen: false,
+          ).updateUsuario(usuario);
+          await storeUser.update_token(usuario);
         }
-        Provider.of<UsuarioProvider>(
-          context,
-          listen: false,
-        ).updateUsuario(usuario);
-        await storeUser.update_token(usuario);
 
         Provider.of<PgProvider>(context, listen: false).updatePg(pg);
         Provider.of<PgProvider>(context, listen: false).updateLicoes(pg);

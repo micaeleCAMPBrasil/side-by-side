@@ -242,11 +242,13 @@ class LicaoFlipPage {
 class PageLicao {
   int id;
   Color? backgroundPage;
+  String? imagemPage;
   List<ImagensLicao> imagens;
   List<TextosLicao> textos;
   PageLicao({
     required this.id,
     this.backgroundPage,
+    this.imagemPage,
     required this.imagens,
     required this.textos,
   });

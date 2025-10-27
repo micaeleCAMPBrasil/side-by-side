@@ -137,6 +137,9 @@ class _PageFlipBookState extends State<PageFlipBook> {
   }
 
   Widget lastPage() {
+    //atualiza();
+    // return _AutoFinishPage(onFinish: atualiza); /*Container(
+
     return Container(
       color: Color(0xff739e59),
       child: Column(
@@ -183,10 +186,19 @@ class _PageFlipBookState extends State<PageFlipBook> {
   Widget demoPage(BuildContext context, LicaoFlipPage licao) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      color:
-          licao.page.backgroundPage == ''
-              ? Color(0xff739e59)
-              : licao.page.backgroundPage,
+      decoration: BoxDecoration(
+        color:
+            licao.page.backgroundPage == ''
+                ? const Color(0xff739e59)
+                : licao.page.backgroundPage,
+        image:
+            licao.page.imagemPage != null
+                ? DecorationImage(
+                  image: AssetImage(licao.page.imagemPage!),
+                  fit: BoxFit.cover, // ou BoxFit.fill / contain etc.
+                )
+                : null,
+      ),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: Stack(
@@ -202,6 +214,41 @@ class _PageFlipBookState extends State<PageFlipBook> {
             child: textosPage(size, licao.page.textos),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _AutoFinishPage extends StatefulWidget {
+  final VoidCallback onFinish;
+
+  const _AutoFinishPage({required this.onFinish});
+
+  @override
+  State<_AutoFinishPage> createState() => _AutoFinishPageState();
+}
+
+class _AutoFinishPageState extends State<_AutoFinishPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Aguarda 3 segundos e chama a função
+    Future.delayed(const Duration(seconds: 3), () {
+      widget.onFinish();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xff739e59),
+      child: Center(
+        child: Text(
+          'Lição Finalizada!',
+          style: colorPrimarySemiBold30,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
