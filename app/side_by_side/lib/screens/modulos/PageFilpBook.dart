@@ -186,6 +186,8 @@ class _PageFlipBookState extends State<PageFlipBook> {
   Widget demoPage(BuildContext context, LicaoFlipPage licao) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color:
             licao.page.backgroundPage == ''
@@ -199,8 +201,6 @@ class _PageFlipBookState extends State<PageFlipBook> {
                 )
                 : null,
       ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       child: Stack(
         children: [
           // Background

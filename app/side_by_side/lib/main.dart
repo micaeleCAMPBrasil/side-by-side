@@ -143,7 +143,7 @@ class _MyAppState extends State<MyApp> {
                 id: 1,
                 idClico: 1,
                 idModulo: 1,
-                nLicao: 2,
+                nLicao: 1,
                 qtdDevocional: 0,
                 title: 'Deus Existe',
                 subtitle: '',
@@ -151,7 +151,7 @@ class _MyAppState extends State<MyApp> {
                 icon: 'https://i.ibb.co/yR9tQWw/trilha-icon.png',
               ),
               idProgresso: 12,
-              initialPage: 10,
+              initialPage: 0,
             ),
             //home: ASplashScreen(),
             theme:
