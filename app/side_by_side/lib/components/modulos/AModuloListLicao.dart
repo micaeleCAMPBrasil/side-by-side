@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:provider/provider.dart';
+import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/pg.dart';
@@ -60,11 +61,11 @@ class _AModuloListLicaoState extends State<AModuloListLicao> {
                   MediaQuery.of(context).size.height * 0.1,
             ),
 
-            //Top 3 button
             const SizedBox(height: 8),
+
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height * 0.76,
               child: SingleChildScrollView(
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -160,6 +161,10 @@ class _AModuloListLicaoState extends State<AModuloListLicao> {
             ),
           ],
         )
-        : Center(child: CircularProgressIndicator(color: appColorPrimary));
+        : Center(
+          child: CircularProgressIndicator(
+            color: appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+          ),
+        );
   }
 }

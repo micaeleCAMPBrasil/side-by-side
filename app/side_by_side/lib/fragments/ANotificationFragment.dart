@@ -52,7 +52,7 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
               Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: appColorPrimary,
+                  color: appColorSecondary,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: IconButton(
@@ -62,7 +62,7 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
                   },
                   icon: Icon(
                     Icons.delete_outline_outlined,
-                    color: iconColorPrimary,
+                    color: appTextColorWhite,
                     size: 14,
                   ),
                 ),
@@ -80,7 +80,14 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
               }
 
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
+                return Center(
+                  child: CircularProgressIndicator(
+                    color:
+                        appStore.isDarkModeOn
+                            ? appColorPrimary
+                            : appColorSecondary,
+                  ),
+                );
               }
 
               final docs = snapshot.data!.docs;
@@ -114,13 +121,7 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.notifications,
-                        color:
-                            appStore.isDarkModeOn
-                                ? iconColorPrimary
-                                : iconColorSecondary,
-                      ),
+                      Icon(Icons.notifications, color: appColorSecondary),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Column(
@@ -158,7 +159,7 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
                       Container(
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: appColorPrimary,
+                          color: appColorSecondary,
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: IconButton(
@@ -170,7 +171,7 @@ class _ANotificationFragmentState extends State<ANotificationFragment> {
                           },
                           icon: Icon(
                             Icons.delete_outline_outlined,
-                            color: iconColorPrimary,
+                            color: appTextColorWhite,
                             size: 15,
                           ),
                         ),

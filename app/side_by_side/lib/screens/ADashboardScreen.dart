@@ -1,11 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:provider/provider.dart';
 import 'package:side_by_side/fragments/AHomeFragment.dart';
 import 'package:side_by_side/fragments/ANotificationFragment.dart';
 import 'package:side_by_side/fragments/AProfileFragment.dart';
 import 'package:side_by_side/fragments/ASearchFragment.dart';
 import 'package:flutter/material.dart';
+import 'package:side_by_side/model/usuario.dart';
+import 'package:side_by_side/utils/AColors.dart';
 
 // ignore: must_be_immutable
 class ADashboardScreen extends StatefulWidget {
@@ -52,21 +55,12 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    /*Usuario usuario =
-        Provider.of<UsuarioProvider>(context, listen: false).getUsuario;*/
+    Usuario usuario =
+        Provider.of<UsuarioProvider>(context, listen: false).getUsuario;
 
     List<Widget> widgetOption = <Widget>[
-      //Text('testando 1.1.5 - Bem Vindo! ${usuario.nome}'),
-      /*Center(
-        child: ElevatedButton(
-          onPressed: () {
-            pedirPermissaoPush(usuario.uid);
-          },
-          child: const Text('Pedi permissão só WEB 1.0.5'),
-        ),
-      ),*/
       const AHomeFragment(),
-      const AModuloPesquisaFragment(),
+      AModuloPesquisaFragment(usuario: usuario),
       //const SizedBox(),
       const ANotificationFragment(),
       const AProfileFragment(),
@@ -80,7 +74,7 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
         body: widgetOption.elementAt(selectedItem),
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 25,
-          backgroundColor: const Color(0xFF462F4C),
+          backgroundColor: appColorSecondary,
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedItem,
           showUnselectedLabels: false,
@@ -88,11 +82,16 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
           onTap: onTapSelection,
           elevation: 0,
           unselectedItemColor: Colors.white,
-          selectedItemColor: Colors.orangeAccent,
+          selectedItemColor: appColorPrimary,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book_rounded),
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book_outlined),
+              activeIcon: Icon(Icons.book),
               label: 'Módulos',
             ),
             /*BottomNavigationBarItem(
@@ -101,10 +100,12 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
             ),*/
             BottomNavigationBarItem(
               icon: Icon(Icons.notifications_outlined),
+              activeIcon: Icon(Icons.notifications),
               label: 'Notification',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline_outlined),
+              icon: Icon(Icons.person_outline),
+              activeIcon: Icon(Icons.person),
               label: 'Profile',
             ),
           ],

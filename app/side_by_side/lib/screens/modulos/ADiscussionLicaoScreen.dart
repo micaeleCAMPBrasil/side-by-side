@@ -16,8 +16,11 @@ import 'package:side_by_side/main.dart';
 class ADiscussionLicaoScreen extends StatefulWidget {
   Modulos modulo;
   Licaos licao;
-  ADiscussionLicaoScreen(
-      {required this.modulo, required this.licao, super.key});
+  ADiscussionLicaoScreen({
+    required this.modulo,
+    required this.licao,
+    super.key,
+  });
 
   @override
   State<ADiscussionLicaoScreen> createState() => _ADiscussionLicaoScreenState();
@@ -47,11 +50,11 @@ class _ADiscussionLicaoScreenState extends State<ADiscussionLicaoScreen> {
                   child: Container(
                     height: 50,
                     width: 50,
-                    color: appStore.isDarkModeOn
-                        ? context.cardColor
-                        : appetitAppContainerColor,
-                    child: const Icon(Icons.arrow_back_ios_outlined,
-                        color: appetitBrownColor),
+                    color: appColorSecondary,
+                    child: const Icon(
+                      Icons.arrow_back_ios_outlined,
+                      color: appTextColorWhite,
+                    ),
                   ),
                 ),
               ),
@@ -60,10 +63,7 @@ class _ADiscussionLicaoScreenState extends State<ADiscussionLicaoScreen> {
               alignment: Alignment.topLeft,
               child: Text(
                 "Comentários",
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w700,
-                ),
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
               ),
             ),
             SizedBox(
@@ -93,14 +93,10 @@ class _ADiscussionLicaoScreenState extends State<ADiscussionLicaoScreen> {
               controller: _comentariosTextController,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                fillColor: appStore.isDarkModeOn
-                    ? context.cardColor
-                    : appetitAppContainerColor,
+                fillColor: appColorPrimary,
                 filled: true,
                 labelText: 'Escreva aqui',
-                labelStyle: const TextStyle(
-                  color: Colors.grey,
-                ),
+                labelStyle: const TextStyle(color: Colors.grey),
               ),
             ),
             Positioned(
@@ -143,7 +139,7 @@ class _ADiscussionLicaoScreenState extends State<ADiscussionLicaoScreen> {
                     _comentariosTextController.text = '';
                   },
                   icon: Icon(Icons.send_outlined),
-                  color: Colors.orange.shade600,
+                  color: appColorSecondary,
                 ),
               ),
             ),

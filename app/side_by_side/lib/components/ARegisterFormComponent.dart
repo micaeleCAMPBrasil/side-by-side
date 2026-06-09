@@ -79,6 +79,7 @@ class _FormInformacoesEnderecoState extends State<FormInformacoesEndereco> {
                 child: FittedBox(
                   fit: BoxFit.contain,
                   child: Switch(
+                    activeColor: appColorSecondary,
                     value: widget.isPais,
                     onChanged: (value) {
                       setState(() {

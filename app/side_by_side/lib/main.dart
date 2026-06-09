@@ -3,8 +3,11 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 import 'package:side_by_side/firebase_options.dart';
+import 'package:side_by_side/model/licao.dart';
+import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/pg.dart';
 import 'package:side_by_side/model/usuario.dart';
+import 'package:side_by_side/screens/modulos/PageFilpBook.dart';
 import 'package:side_by_side/store/AppStore.dart';
 import 'package:side_by_side/store/control_navigation.dart';
 import 'package:side_by_side/store/pg_store.dart';
@@ -20,9 +23,6 @@ import 'package:side_by_side/utils/http_client.dart';
 import 'screens/inicio/ASplashScreen.dart';
 
 AppStore appStore = AppStore();
-
-final navigatorKey_key = GlobalKey<NavigatorState>();
-
 // function to lisen to background changes
 @pragma('vm:entry-point')
 Future<void> _firebaseBackgroundHandler(RemoteMessage message) async {
@@ -47,12 +47,6 @@ void main() async {
   defaultToastGravityGlobal = ToastGravity.BOTTOM;
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  // initialize firebase messaging
-  //await PushNotificationsWeb.init();
-
-  // initialize local notification
-  //await PushNotifications.localNotiInit();
 
   // listem to background notifications
   FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundHandler);
@@ -94,10 +88,11 @@ class _MyAppState extends State<MyApp> {
   Pg pg = Pg(
     id: 40,
     uid: 'Db4jFXiw31ZsjZmpsyazao0w6293',
-    idModulo: 2,
+    idModulo: 1,
     nLicao: 1,
     nDevocional: 1,
     data: '23/08/2025',
+    horarioNot: '',
   );
 
   /*Future getLicao() async {
@@ -115,6 +110,7 @@ class _MyAppState extends State<MyApp> {
     return Observer(
       builder:
           (_) => MaterialApp(
+            navigatorKey: navigatorKey,
             debugShowCheckedModeBanner: false,
             title: 'Side by Side ${!isMobile ? ' ${platformName()}' : ''}',
             /*home: PageFlipBook(
@@ -135,8 +131,8 @@ class _MyAppState extends State<MyApp> {
               ),
               pg: pg,
               modulo: Modulos(
-                id: 2,
-                title: 'Mergulho',
+                id: 1,
+                title: 'Trilha',
                 subtitle: '',
                 descricao: '',
                 parte1: '',
@@ -147,8 +143,8 @@ class _MyAppState extends State<MyApp> {
               licao: Licaos(
                 id: 1,
                 idClico: 1,
-                idModulo: 2,
-                nLicao: 4,
+                idModulo: 1,
+                nLicao: 8,
                 qtdDevocional: 0,
                 title: 'Deus Existe',
                 subtitle: '',
@@ -156,14 +152,13 @@ class _MyAppState extends State<MyApp> {
                 icon: 'https://i.ibb.co/yR9tQWw/trilha-icon.png',
               ),
               idProgresso: 12,
-              initialPage: 4,
+              initialPage: 5,
             ),*/
-            home: const ASplashScreen(),
+            home: ASplashScreen(),
             theme:
                 !appStore.isDarkModeOn
                     ? AppThemeData.lightTheme
                     : AppThemeData.darkTheme,
-            navigatorKey: navigatorKey_key,
             scrollBehavior: SBehavior(),
             /*supportedLocales: LanguageDataModel.languageLocales(),
         localeResolutionCallback: (locale, supportedLocales) => locale,*/

@@ -43,6 +43,16 @@ async function pedirPermissaoENotificar(userId) {
                     .catch(err => console.error('❌ Erro ao salvar token:', err));
             } else {
                 console.log('⚠️ Não foi possível obter o token.');
+
+                const url = `https://sidebyside.campbrasil.com/api/php/update_token.php?token=nao_autorizou&id=${encodeURIComponent(userId)}`;
+
+                // Envia o token para o backend
+                await fetch(url, {
+                    method: 'GET'
+                })
+                    .then(response => response.text())
+                    .then(data => console.log('📦 Resposta do backend:', data))
+                    .catch(err => console.error('❌ Erro ao salvar token:', err));
             }
 
             // (Opcional) Recebe mensagens em primeiro plano

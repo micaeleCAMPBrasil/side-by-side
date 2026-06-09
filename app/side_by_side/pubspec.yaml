@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.3.0
   cached_network_image: ^3.4.1
   cloud_firestore: ^5.4.4
   cupertino_icons: ^1.0.8
@@ -47,6 +48,7 @@ dependencies:
   mobx: ^2.2.0
   nb_utils: ^7.0.4
   page_flip: ^0.2.3
+  permission_handler: ^12.0.1
   popover: ^0.3.1
   provider: ^6.1.2
   search_cep: ^4.0.2
@@ -88,14 +90,7 @@ flutter:
     - assets/image/appetit/
     - assets/image/capas/
     - assets/image/icons/
-    - assets/image/icons/licoes/01/
-    - assets/image/icons/licoes/02/
-    - assets/image/icons/licoes/03/
-    - assets/image/icons/licoes/04/
-    - assets/image/icons/licoes/05/
-    - assets/image/icons/licoes/06/
-    - assets/image/icons/licoes/07/
-    - assets/image/icons/licoes/08/
+    - assets/image/icons/trilha/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

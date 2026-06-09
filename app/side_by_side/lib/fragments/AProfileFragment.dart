@@ -8,8 +8,11 @@ import 'package:side_by_side/store/php.dart';
 import 'package:side_by_side/store/user_store.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:side_by_side/utils/AColors.dart';
 import 'package:side_by_side/utils/auth_service.dart';
 import 'package:side_by_side/utils/http_client.dart';
+import 'package:side_by_side/utils/notification_permission_helper.dart';
+import 'package:side_by_side/utils/notification_service.dart';
 
 class AProfileFragment extends StatefulWidget {
   const AProfileFragment({super.key});
@@ -25,13 +28,16 @@ class _AProfileFragmentState extends State<AProfileFragment>
   );
 
   bool? notificationsEnabled;
+
   @override
   void initState() {
     super.initState();
     final usuario =
         Provider.of<UsuarioProvider>(context, listen: false).getUsuario;
     notificationsEnabled =
-        usuario.tokenAlert == '' || usuario.tokenAlert == 'carregando...'
+        usuario.tokenAlert == '' ||
+                usuario.tokenAlert == 'carregando...' ||
+                usuario.tokenAlert == 'nao_autorizou'
             ? false
             : true;
   }
@@ -84,7 +90,7 @@ class _AProfileFragmentState extends State<AProfileFragment>
                             ),*/
                     ),
                   ),
-                  Positioned(
+                  /*Positioned(
                     top: 16 + MediaQuery.of(context).viewPadding.top,
                     right: 16,
                     child: ClipRRect(
@@ -111,7 +117,7 @@ class _AProfileFragmentState extends State<AProfileFragment>
                         ),
                       ),
                     ),
-                  ),
+                  ),*/
                   Positioned(
                     top: 16 + MediaQuery.of(context).viewPadding.top,
                     right: 70,
@@ -223,11 +229,12 @@ class _AProfileFragmentState extends State<AProfileFragment>
                     setStatusBarColor(Colors.white);
                   }
                 },
-                activeColor: Colors.orange.shade600,
+                activeColor:
+                    appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
               ),
             ),
             //2nd content (Social information)
-            /*ListTile(
+            ListTile(
               leading: Icon(Icons.notifications, color: context.iconColor),
               title: Text('Notificações', style: boldTextStyle()),
               trailing: Switch(
@@ -239,22 +246,29 @@ class _AProfileFragmentState extends State<AProfileFragment>
                   });
 
                   if (val) {
-                    await PushNotificationsWeb.requestNotificationPermission();
-                    final token = await PushNotificationsWeb.getToken();
-                    if (token != null && token.isNotEmpty) {
-                      usuario.tokenAlert = token;
-                      Provider.of<UsuarioProvider>(
-                        context,
-                        listen: false,
-                      ).updateUsuario(usuario);
-                      await storeUser.update_token(usuario);
+                    await NotificationPermissionHelper.checkAndRequestPermission(
+                      context,
+                    );
+                    final new_token = await PushNotifications.getToken();
+                    debugPrint('o token é: $new_token');
+                    if (new_token != null && new_token.isNotEmpty) {
+                      usuario.tokenAlert = new_token;
                     }
+                  } else {
+                    usuario.tokenAlert = 'nao_autorizou';
                   }
+
+                  Provider.of<UsuarioProvider>(
+                    context,
+                    listen: false,
+                  ).updateUsuario(usuario);
+                  final atualizacao = await storeUser.update_token(usuario);
+                  debugPrint('atualização $atualizacao');
+                  if (atualizacao) {}
                 },
-                activeColor: Colors.orange.shade600,
+                activeColor: appColorSecondary,
               ),
             ),
-            */
             ListTile(
               onTap: () {
                 Navigator.push(

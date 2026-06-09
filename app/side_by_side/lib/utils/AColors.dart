@@ -6,9 +6,10 @@ const appetitAppContainerColor = Color(0xFFF9E3D5);
 const appetitAppContainerColor2 = Color.fromARGB(255, 213, 249, 216);
 const appetitBrownColor = Color.fromARGB(255, 0, 0, 0); // é p tirar
 
-const appColorPrimary = Color(0xfff7cb2d);
+const appColorPrimary = Color(0xffE9EDC9);
 const appColorPrimaryLight = Color(0xFFF9FAFF);
 
+const appColorSecondary = Color(0xff695D00);
 const appSecondaryBackgroundColor = Color(0xff343434); // card color
 
 const iconColorPrimary = Color(0xFFFFFFFF);

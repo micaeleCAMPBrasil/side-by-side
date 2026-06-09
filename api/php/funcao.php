@@ -104,8 +104,7 @@ class Funcao
                                 $inserir_progresso = mysqli_query($db, $inserir_progresso_sql);
 
                                 if ($inserir_progresso) {
-
-                                    $consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
+                                    /*$consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
                                     $resultado_devocional = mysqli_query($db, $consulta_devocional_sql);
                                     $cont_devocional = mysqli_num_rows($resultado_devocional);
 
@@ -114,7 +113,7 @@ class Funcao
                                         $inserir_devocional = mysqli_query($db, $inserir_devocional_sql);
                                         if ($inserir_devocional) {
                                         }
-                                    }
+                                    }*/
                                 } else {
                                 }
                             }
@@ -133,8 +132,7 @@ class Funcao
                             $inserir_progresso = mysqli_query($db, $inserir_progresso_sql);
 
                             if ($inserir_progresso) {
-
-                                $consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
+                                /*$consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
                                 $resultado_devocional = mysqli_query($db, $consulta_devocional_sql);
                                 $cont_devocional = mysqli_num_rows($resultado_devocional);
 
@@ -143,7 +141,7 @@ class Funcao
                                     $inserir_devocional = mysqli_query($db, $inserir_devocional_sql);
                                     if ($inserir_devocional) {
                                     }
-                                }
+                                }*/
                             } else {
                             }
                         }
@@ -181,8 +179,7 @@ class Funcao
                         $inserir_progresso = mysqli_query($db, $inserir_progresso_sql);
 
                         if ($inserir_progresso) {
-
-                            $consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
+                            /*$consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
                             $resultado_devocional = mysqli_query($db, $consulta_devocional_sql);
                             $cont_devocional = mysqli_num_rows($resultado_devocional);
 
@@ -191,7 +188,7 @@ class Funcao
                                 $inserir_devocional = mysqli_query($db, $inserir_devocional_sql);
                                 if ($inserir_devocional) {
                                 }
-                            }
+                            }*/
                         } else {
                         }
                     }
@@ -210,8 +207,7 @@ class Funcao
                     $inserir_progresso = mysqli_query($db, $inserir_progresso_sql);
 
                     if ($inserir_progresso) {
-
-                        $consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
+                        /*$consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$id_lider' AND id_pg = '$id_pg'";
                         $resultado_devocional = mysqli_query($db, $consulta_devocional_sql);
                         $cont_devocional = mysqli_num_rows($resultado_devocional);
 
@@ -220,7 +216,7 @@ class Funcao
                             $inserir_devocional = mysqli_query($db, $inserir_devocional_sql);
                             if ($inserir_devocional) {
                             }
-                        }
+                        }*/
                     } else {
                     }
                 }
@@ -311,7 +307,7 @@ class Funcao
 
             if ($cont == 0) {
 
-                $inserir_pg_sql = "INSERT INTO pg VALUES (null,'$idLider',1,1,1,'$data')";
+                $inserir_pg_sql = "INSERT INTO pg VALUES (null,'$idLider',1,1,1,'','$data')";
                 $inserir_pg = mysqli_query($db, $inserir_pg_sql);
 
                 if ($inserir_pg) {
@@ -711,6 +707,52 @@ class Funcao
         }
     }
 
+    public function finalizouLicao($id, $idLider, $idPg, $idModulo, $idLicao)
+    {
+        require_once '../conexao.php';
+        $data_hj = date('d/m/Y');
+
+        if ($id == '' || $idLider == '' || $idPg == '' || $idModulo == '' || $idLicao == '') {
+            echo json_encode("dados_vazios");
+        } else {
+
+            // CONSULTAR NA TABELA
+            $consulta = "SELECT * FROM check_licao WHERE id = '$id' AND id_lider = '$idLider' AND id_pg = '$idPg' AND id_modulo = '$idModulo' AND n_licao = '$idLicao'";
+            $resultado = mysqli_query($db, $consulta);
+            $cont = mysqli_num_rows($resultado);
+
+            if ($cont == 0) {
+                echo json_encode("erro_progresso_nao_encontrado");
+            } else {
+                $info_progresso = $resultado->fetch_assoc();
+                $check = $info_progresso['checks'];
+
+                if ($check == '1') {
+                    echo json_encode("sucesso");
+                } else {
+                    $update_progresso_sql = "UPDATE check_licao SET checks = 1, data = '$data_hj' WHERE id = '$id' AND id_lider = '$idLider' AND id_pg = '$idPg' AND id_modulo = '$idModulo' AND n_licao = '$idLicao'";
+                    $update_progresso = mysqli_query($db, $update_progresso_sql);
+                    if ($update_progresso) {
+                        $consulta_devocional_sql = "SELECT * FROM check_devocional WHERE id_lider = '$idLider' AND id_pg = '$idPg' AND id_modulo = '$idModulo' AND n_licao = '$idLicao'";
+                        $resultado_devocional = mysqli_query($db, $consulta_devocional_sql);
+                        $cont_devocional = mysqli_num_rows($resultado_devocional);
+
+                        if ($cont_devocional == 0) {
+                            $inserir_devocional_sql = "INSERT INTO check_devocional VALUES (null,'$idLider','$idPg',$idModulo,$idLicao,1,0,'$data_hj')";
+                            $inserir_devocional = mysqli_query($db, $inserir_devocional_sql);
+                            if ($inserir_devocional) {
+                            }
+                        }
+
+                        echo json_encode("sucesso");
+                    } else {
+                        echo json_encode("erro_na_edicao");
+                    }
+                }
+            }
+        }
+    }
+
     public function uploadProgressoLike($id, $like)
     {
         require_once '../conexao.php';
@@ -923,6 +965,32 @@ class Funcao
         }
     }
 
+    public function editPGHorario($idPG, $horario)
+    {
+        require_once '../conexao.php';
+
+        if ($idPG == '' || $horario == '') {
+            echo json_encode("dados_vazios");
+        } else {
+
+            $consulta = "SELECT * FROM pg WHERE id = '$idPG'";
+            $resultado = mysqli_query($db, $consulta);
+            $cont = mysqli_num_rows($resultado);
+
+            if ($cont == 0) {
+                echo json_encode("pg_n_encontrado");
+            } else {
+                $update_anotacao_sql = "UPDATE pg SET hora_notificacao = '$horario' WHERE id = '$idPG'";
+                $update_anotacao = mysqli_query($db, $update_anotacao_sql);
+
+                if ($update_anotacao) {
+                    echo json_encode("sucesso");
+                } else {
+                    echo json_encode("erro_na_edicao");
+                }
+            }
+        }
+    }
     public function getStatusModulos($idLider)
     {
         require_once '../conexao.php';
@@ -1001,6 +1069,88 @@ class Funcao
             }
         }
     }
+
+
+    public function addMomentoOracao($idModulo, $texto)
+    {
+        require_once '../conexao.php';
+
+        $data = date('Y-m-d');
+
+        if ($idModulo == 0 || $texto == '') {
+            echo json_encode("dados_vazios");
+        } else {
+
+            $inserir_anotacao_sql = "INSERT INTO momento_oracao VALUES (null,'$idModulo','$texto','$data')";
+            $inserir_anotacao = mysqli_query($db, $inserir_anotacao_sql);
+
+            if ($inserir_anotacao) {
+                echo "<script>
+                    alert('Sucesso!');
+                    window.location.href = '../index.php';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Erro!');
+                    window.location.href = '../index.php';
+                </script>";
+            }
+        }
+    }
+
+    public function addPergunteaoPai($idModulo, $nLicao, $texto)
+    {
+        require_once '../conexao.php';
+
+        $data = date('Y-m-d');
+
+        if ($idModulo == 0 || $nLicao == 0 || $texto == '') {
+            echo json_encode("dados_vazios");
+        } else {
+
+            $inserir_anotacao_sql = "INSERT INTO pergunte_ao_pai VALUES (null,'$idModulo','$nLicao','$texto','$data')";
+            $inserir_anotacao = mysqli_query($db, $inserir_anotacao_sql);
+
+            if ($inserir_anotacao) {
+                echo "<script>
+                    alert('Sucesso!');
+                    window.location.href = '../index.php';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Erro!');
+                    window.location.href = '../index.php';
+                </script>";
+            }
+        }
+    }
+
+    public function addDesafioLicao($idModulo, $nLicao, $titulo, $desafio)
+    {
+        require_once '../conexao.php';
+
+        if ($idModulo == 0 || $nLicao == 0 || $titulo == '' || $desafio == '') {
+            echo json_encode("dados_vazios");
+        } else {
+            $desafio = mysqli_real_escape_string($db, $desafio);
+
+            $inserir_desafio_licao_sql = "INSERT INTO desafio_licao VALUES(null,$idModulo,$nLicao,'$titulo','$desafio')";
+            $inserir_desafio_licao = mysqli_query($db, $inserir_desafio_licao_sql);
+
+            if ($inserir_desafio_licao) {
+                echo "<script>
+                    alert('Sucesso!');
+                    window.location.href = '../index.php';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Erro!');
+                    window.location.href = '../index.php';
+                </script>";
+            }
+        }
+    }
+
     public function uploadAnotacoes($id, $title, $texto, $checking, $cor)
     {
         require_once '../conexao.php';
@@ -1038,6 +1188,240 @@ class Funcao
             } else {
                 echo json_encode("erro_na_exclusao");
             }
+        }
+    }
+
+    public function getMotivosOracao($idLider)
+    {
+        require_once '../conexao.php';
+
+        if ($idLider == 0 || $idLider == '') {
+            echo json_encode("dados_vazios");
+        } else {
+            // VERIFICA SE O LIDER TEM PG
+            $consulta_pg = "SELECT * FROM pg WHERE id_lider = '$idLider'";
+            $resultado_pg = mysqli_query($db, $consulta_pg);
+            $cont_pg = mysqli_num_rows($resultado_pg);
+
+            if ($cont_pg == 0) {
+                echo json_decode("");
+                exit;
+            }
+
+            $dados_pg = mysqli_fetch_assoc($resultado_pg);
+            $idModulo = $dados_pg['id_modulo'];
+
+            // ==========================================
+            // 1. VERIFICA SE JÁ EXISTE ORAÇÃO HOJE
+            // ==========================================
+            $sqlHoje = "SELECT mo.* FROM oracao_mostrada om INNER JOIN momento_oracao mo ON mo.id = om.id_oracao WHERE om.id_lider = '$idLider' AND mo.id_modulo = '$idModulo' AND om.data_mostrada = CURDATE() LIMIT 1";
+            $resultHoje = mysqli_query($db, $sqlHoje);
+
+            $oracaoHoje = mysqli_fetch_assoc($resultHoje);
+
+            // Se já tiver oração hoje
+            if ($oracaoHoje) {
+                echo json_encode($oracaoHoje['texto']);
+                exit;
+            }
+
+            // ==========================================
+            // 2. BUSCA ORAÇÃO NÃO MOSTRADA
+            // ==========================================
+
+            $sqlNova = "SELECT *
+                FROM momento_oracao
+                WHERE id_modulo = '$idModulo'
+                AND id NOT IN (
+                    SELECT id_oracao
+                    FROM oracao_mostrada
+                    WHERE id_lider = '$idLider'
+                )
+                ORDER BY RAND()
+                LIMIT 1
+            ";
+
+            $resultNova = mysqli_query($db, $sqlNova);
+
+            $novaOracao = mysqli_fetch_assoc($resultNova);
+
+            // ==========================================
+            // 3. SE ACABARAM TODAS → LIMPA HISTÓRICO
+            // ==========================================
+            if (!$novaOracao) {
+
+                //$sqlLimpar = "DELETE FROM oracao_mostrada WHERE id_lider = '$idLider'";
+                $sqlLimpar = "DELETE om
+                    FROM oracao_mostrada om
+                    INNER JOIN momento_oracao mo
+                        ON mo.id = om.id_oracao
+                    WHERE om.id_lider = '$idLider'
+                    AND mo.id_modulo = '$idModulo'
+                ";
+                mysqli_query($db, $sqlLimpar);
+                // Busca novamente
+                $resultNova = mysqli_query($db, $sqlNova);
+                $novaOracao = mysqli_fetch_assoc($resultNova);
+            }
+
+            // ==========================================
+            // 4. SALVA ORAÇÃO DO DIA
+            // ==========================================
+            $idOracao = $novaOracao['id'];
+            $sqlSalvar = "INSERT INTO oracao_mostrada(
+                    id_lider,
+                    id_oracao,
+                    data_mostrada
+                )
+                VALUES (
+                    '$idLider',
+                    '$idOracao',
+                    CURDATE()
+                )
+            ";
+
+            mysqli_query($db, $sqlSalvar);
+
+            // ==========================================
+            // 5. RETORNA JSON
+            // ==========================================
+            echo json_encode($novaOracao['texto']);
+        }
+    }
+
+
+    public function getDesafio($idModulo, $nLicao)
+    {
+        require_once '../conexao.php';
+
+        if ($idModulo == '' || $nLicao == '') {
+            echo json_encode("dados_vazios");
+        } else {
+            // VERIFICA SE O LIDER TEM PG
+            $consulta_desafio = "SELECT * FROM desafio_licao WHERE id_modulo = '$idModulo' AND n_licao = '$nLicao'";
+            $resultado_desafio = mysqli_query($db, $consulta_desafio);
+            $cont_desafio = mysqli_num_rows($resultado_desafio);
+
+            if ($cont_desafio == 0) {
+                echo json_decode("");
+                exit;
+            } else {
+            }
+
+            $desafio = mysqli_fetch_assoc($resultado_desafio);
+            echo json_encode($desafio);
+        }
+    }
+
+    public function getPerguntaPai($idLider)
+    {
+        require_once '../conexao.php';
+
+        if ($idLider == 0 || $idLider == '') {
+            echo json_encode("dados_vazios");
+        } else {
+
+            // VERIFICA SE O LIDER TEM PG
+            $consulta_pg = "SELECT * FROM pg WHERE id_lider = '$idLider'";
+            $resultado_pg = mysqli_query($db, $consulta_pg);
+            $cont_pg = mysqli_num_rows($resultado_pg);
+
+            if ($cont_pg == 0) {
+                echo json_decode("");
+                exit;
+            }
+
+            $dados_pg = mysqli_fetch_assoc($resultado_pg);
+            $idModulo = $dados_pg['id_modulo'];
+            $nLicao = $dados_pg['n_licao'];
+
+            // ==========================================
+            // 1. VERIFICA SE JÁ EXISTE ORAÇÃO HOJE
+            // ==========================================
+            //$sqlHoje = "SELECT mo.* FROM pergunta_mostrada om INNER JOIN pergunte_ao_pai mo ON mo.id = om.id_pergunta WHERE om.id_lider = '$idLider' AND om.data_mostrada = CURDATE() LIMIT 1";
+
+            $sqlHoje = "SELECT mo.*
+                FROM pergunta_mostrada om
+                INNER JOIN pergunte_ao_pai mo
+                ON mo.id = om.id_pergunta
+                WHERE om.id_lider = '$idLider'
+                AND mo.id_modulo = '$idModulo'
+                AND mo.n_licao = '$nLicao'
+                AND om.data_mostrada = CURDATE()
+                LIMIT 1
+            ";
+
+            $resultHoje = mysqli_query($db, $sqlHoje);
+
+            $perguntaHoje = mysqli_fetch_assoc($resultHoje);
+
+            // Se já tiver oração hoje
+            if ($perguntaHoje) {
+                echo json_encode($perguntaHoje['texto']);
+                exit;
+            }
+
+            // ==========================================
+            // 2. BUSCA ORAÇÃO NÃO MOSTRADA
+            // ==========================================
+
+            $sqlNova = "SELECT *
+                FROM pergunte_ao_pai
+                WHERE id_modulo = '$idModulo'
+                AND n_licao = '$nLicao'
+                AND id NOT IN (
+                    SELECT id_pergunta
+                    FROM pergunta_mostrada
+                    WHERE id_lider = '$idLider'
+                )
+                ORDER BY RAND()
+                LIMIT 1
+            ";
+
+            $resultNova = mysqli_query($db, $sqlNova);
+
+            $novaPergunta = mysqli_fetch_assoc($resultNova);
+
+            // ==========================================
+            // 3. SE ACABARAM TODAS → LIMPA HISTÓRICO
+            // ==========================================
+            if (!$novaPergunta) {
+                $sqlLimpar = "DELETE pm
+                    FROM pergunta_mostrada pm
+                    INNER JOIN pergunte_ao_pai pp
+                        ON pp.id = pm.id_pergunta
+                    WHERE pm.id_lider = '$idLider'
+                    AND pp.id_modulo = '$idModulo'
+                    AND pp.n_licao = '$nLicao'
+                ";
+                mysqli_query($db, $sqlLimpar);
+                // Busca novamente
+                $resultNova = mysqli_query($db, $sqlNova);
+                $novaPergunta = mysqli_fetch_assoc($resultNova);
+            }
+
+            // ==========================================
+            // 4. SALVA PERGUNTA DO DIA
+            // ==========================================
+            $idPergunta = $novaPergunta['id'];
+            $sqlSalvar = "INSERT INTO pergunta_mostrada(
+                    id_lider,
+                    id_pergunta,
+                    data_mostrada
+                )
+                VALUES (
+                    '$idLider',
+                    '$idPergunta',
+                    CURDATE()
+                )
+            ";
+
+            mysqli_query($db, $sqlSalvar);
+
+            // ==========================================
+            // 5. RETORNA JSON
+            // ==========================================
+            echo json_encode($novaPergunta['texto']);
         }
     }
 }

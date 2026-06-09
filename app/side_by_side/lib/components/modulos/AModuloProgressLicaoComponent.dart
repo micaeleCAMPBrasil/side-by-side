@@ -48,99 +48,98 @@ class _AModuloProgressLicaoComponentState
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     List<DetalhesModulos> detalhes =
         listDetalhesModulos
             .where((element) => element.idModulo == widget.modulo.id)
             .toList();
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(8.0),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height:
-                  MediaQuery.of(context).viewPadding.top +
-                  MediaQuery.of(context).size.height * 0.1,
-            ),
+      child: Column(
+        children: [
+          SizedBox(
+            height:
+                MediaQuery.of(context).viewPadding.top +
+                MediaQuery.of(context).size.height * 0.1,
+          ),
 
-            //Top 3 button
-            /*const Text(
-              'Passos...',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-              textAlign: TextAlign.center,
-            ),*/
-            //const SizedBox(height: 16),
-            Column(
-              children:
-                  detalhes
-                      .map(
-                        (e) => Padding(
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: Row(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(25),
-                                child: Image.asset(
-                                  e.assets.toString(),
-                                  height: 50,
-                                  width: 50,
-                                  fit: BoxFit.cover,
+          SizedBox(
+            height: size.height * 0.76,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children:
+                    detalhes
+                        .map(
+                          (e) => Padding(
+                            padding: const EdgeInsets.only(bottom: 16.0),
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(25),
+                                  child: Image.asset(
+                                    e.assets.toString(),
+                                    height: 50,
+                                    width: 50,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      e.nome.toString(),
-                                      style: const TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Visibility(
-                                      visible: e.descricao.isNotEmpty,
-                                      child: Text(
-                                        e.descricao.toString(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w300,
-                                          fontSize: 10,
+                                const SizedBox(width: 4),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        e.nome.toString(),
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 4),
+                                      Visibility(
+                                        visible: e.descricao.isNotEmpty,
+                                        child: Text(
+                                          e.descricao.toString(),
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w300,
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: InkWell(
-                                    child: Container(
-                                      color:
-                                          appStore.isDarkModeOn
-                                              ? context.cardColor
-                                              : appetitAppContainerColor,
-                                      height: 50,
-                                      width: 50,
-                                      child: const Icon(
-                                        Icons.check,
-                                        color: Colors.green,
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: InkWell(
+                                      child: Container(
+                                        color:
+                                            appStore.isDarkModeOn
+                                                ? context.cardColor
+                                                : appColorSecondary,
+                                        height: 50,
+                                        width: 50,
+                                        child: const Icon(
+                                          Icons.check,
+                                          color: appTextColorWhite,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      )
-                      .toList(),
+                        )
+                        .toList(),
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

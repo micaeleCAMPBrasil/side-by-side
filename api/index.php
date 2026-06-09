@@ -13,6 +13,72 @@
     <center>
         <a href="enviar_notificacao.php">NOTIFICAÇÕES</a>
     </center>
+
+    <div class="container">
+        <div class="col-lg-12">
+            <form action="php/addDesafioLicao.php" method="post">
+                <h3>DESAFIO</h3>
+                <input type="text" placeholder="MÓDULO" name="id_modulo" class="form-control" value="1">
+                <input type="text" placeholder="N LIÇÃO" name="n_licao" class="form-control" value="1">
+
+                <label>Título da Lição</label>
+                <input type="text" name="titulo">
+
+                <br>
+
+                <label>JSON do desafio</label>
+                <textarea name="desafio" rows="15" cols="80">[]</textarea>
+
+                <br>
+                <input type="submit" class="btn btn-info" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-lg-12">
+            <form action="php/addPergunteaoPai.php" method="post">
+                <h3>PERGUNTE AO PAI</h3>
+                <label>Módulo</label>
+                <select name="id_modulo">
+                    <option value="1">Trilha</option>
+                    <option value="2">Mergulho</option>
+                    <option value="3">Santuário</option>
+                    <option value="4">Arco</option>
+                    <option value="5">Estação Final</option>
+                </select>
+
+                <label>Lição</label>
+                <select name="n_licao">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+
+                <input type="text" placeholder="TEXTO" name="texto" class="form-control" value="">
+                <input type="submit" class="btn btn-info" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-lg-12">
+            <form action="php/addMomentoOracao.php" method="post">
+                <h3>MOMENTO DE ORAÇÃO</h3>
+                <input type="text" placeholder="MÓDULO" name="id_modulo" class="form-control" value="1">
+                <input type="text" placeholder="TEXTO" name="texto" class="form-control" value="">
+                <input type="submit" class="btn btn-info" value="Enviar">
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="col-lg-12">
             <form action="php/addProgresso.php" method="post">

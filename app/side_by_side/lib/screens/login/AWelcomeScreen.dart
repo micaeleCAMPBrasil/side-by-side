@@ -41,7 +41,7 @@ class _AWelcomeScreenState extends State<AWelcomeScreen> {
         automaticallyImplyLeading: false,
         leading: Container(
           decoration: BoxDecoration(
-            color: appColorPrimary,
+            color: appColorSecondary,
             borderRadius: BorderRadius.circular(25),
           ),
           margin: const EdgeInsets.only(left: 8.0, top: 8),
@@ -69,13 +69,14 @@ class _AWelcomeScreenState extends State<AWelcomeScreen> {
         actions: [
           Container(
             decoration: BoxDecoration(
-              color: appColorPrimary,
+              color: appColorSecondary,
               borderRadius: BorderRadius.circular(25),
             ),
             margin: const EdgeInsets.only(top: 8, right: 8),
             width: 50,
             height: 50,
             child: InkWell(
+              onTap: () => abrirwhatsapp(Uri.parse(whatsappUrl)),
               borderRadius: BorderRadius.circular(25),
               child: const Icon(
                 Icons.help_outline_outlined,
@@ -141,7 +142,7 @@ class _AWelcomeScreenState extends State<AWelcomeScreen> {
                       ),
                     ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: appColorPrimary,
+                  backgroundColor: appColorSecondary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
