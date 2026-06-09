@@ -92,6 +92,7 @@ class _MyAppState extends State<MyApp> {
     nLicao: 1,
     nDevocional: 1,
     data: '23/08/2025',
+    horarioNot: '',
   );
 
   /*Future getLicao() async {
@@ -112,7 +113,7 @@ class _MyAppState extends State<MyApp> {
             navigatorKey: navigatorKey,
             debugShowCheckedModeBanner: false,
             title: 'Side by Side ${!isMobile ? ' ${platformName()}' : ''}',
-            home: PageFlipBook(
+            /*home: PageFlipBook(
               usuario: Usuario(
                 uid: 'Db4jFXiw31ZsjZmpsyazao0w6293',
                 nome: 'Cleideane Sales',
@@ -143,7 +144,7 @@ class _MyAppState extends State<MyApp> {
                 id: 1,
                 idClico: 1,
                 idModulo: 1,
-                nLicao: 1,
+                nLicao: 8,
                 qtdDevocional: 0,
                 title: 'Deus Existe',
                 subtitle: '',
@@ -151,9 +152,9 @@ class _MyAppState extends State<MyApp> {
                 icon: 'https://i.ibb.co/yR9tQWw/trilha-icon.png',
               ),
               idProgresso: 12,
-              initialPage: 0,
-            ),
-            //home: ASplashScreen(),
+              initialPage: 5,
+            ),*/
+            home: ASplashScreen(),
             theme:
                 !appStore.isDarkModeOn
                     ? AppThemeData.lightTheme

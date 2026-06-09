@@ -4,6 +4,7 @@ import 'package:page_flip/page_flip.dart';
 import 'package:flutter/material.dart';
 import 'package:side_by_side/data/licao_detalhada.dart';
 import 'package:side_by_side/data/licoes_repository.dart';
+import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/pg.dart';
@@ -105,7 +106,12 @@ class _PageFlipBookState extends State<PageFlipBook> {
         valueListenable: repository.licoesNotifier,
         builder: (context, licoes, _) {
           if (licoes.isEmpty) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator(
+                color:
+                    appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+              ),
+            );
           }
 
           List<LicaoFlipPage> licao =
@@ -127,7 +133,45 @@ class _PageFlipBookState extends State<PageFlipBook> {
           return PageFlipWidget(
             key: _controller,
             backgroundColor: Colors.white,
-            lastPage: lastPage(),
+            //lastPage: lastPage(),
+            onPageFlipped: (index) async {
+              // última página
+              if (index == licao.length - 1) {
+                await storePg.atualizarProgresso(
+                  widget.idProgresso,
+                  widget.usuario.uid,
+                  widget.pg.id.toString(),
+                  widget.licao.idModulo.toString(),
+                  widget.licao.nLicao.toString(),
+                );
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    backgroundColor: appColorSecondary,
+                    content: Text(
+                      'Lição finalizada! Aguarde...',
+                      style: colorWhiteSemiBold16,
+                    ),
+                    duration: Duration(milliseconds: 1500),
+                  ),
+                );
+
+                Future.delayed(const Duration(milliseconds: 2000), () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (context) => APageLicao(
+                            modulo: widget.modulo,
+                            licao: widget.licao,
+                            pg: widget.pg,
+                            usuario: widget.usuario,
+                          ),
+                    ),
+                  );
+                });
+              }
+            },
             initialIndex: widget.initialPage,
             children: [for (var l in licao) demoPage(context, l)],
           );
@@ -136,9 +180,9 @@ class _PageFlipBookState extends State<PageFlipBook> {
     );
   }
 
-  Widget lastPage() {
+  /*Widget lastPage() {
     //atualiza();
-    // return _AutoFinishPage(onFinish: atualiza); /*Container(
+    //return _AutoFinishPage(onFinish: atualiza);
 
     return Container(
       color: Color(0xff739e59),
@@ -181,7 +225,7 @@ class _PageFlipBookState extends State<PageFlipBook> {
             ),
       ),
     );
-  }
+  }*/
 
   Widget demoPage(BuildContext context, LicaoFlipPage licao) {
     Size size = MediaQuery.of(context).size;

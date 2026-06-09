@@ -5,6 +5,7 @@ import 'package:side_by_side/components/modulos/AModuloDescrptionComponent.dart'
 import 'package:side_by_side/components/modulos/AModuloDiscussionComponent.dart';
 import 'package:side_by_side/components/modulos/AModuloListLicao.dart';
 import 'package:side_by_side/components/modulos/AModuloProgressLicaoComponent.dart';
+import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/usuario.dart';
 import 'package:side_by_side/store/pg_store.dart';
@@ -139,20 +140,20 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: appColorPrimary,
+                        color: appColorSecondary,
                       ),
                       child: IconButton(
                         icon: const Icon(
                           Icons.arrow_back_ios_outlined,
-                          color: appColorPrimaryLight,
+                          color: appTextColorWhite,
                         ),
                         onPressed: () {
                           finish(context);
                         },
                       ),
                     ),
-                    const Text(
-                      "Módulos",
+                    Text(
+                      widget.modulo.title,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
@@ -167,16 +168,14 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                             child: Container(
                               width: 50,
                               height: 50,
-                              color: appColorPrimary,
+                              color: appColorSecondary,
                               child: IconButton(
                                 icon: Icon(
                                   isLiked
                                       ? Icons.favorite
                                       : Icons.favorite_border_outlined,
                                   color:
-                                      isLiked
-                                          ? Colors.red
-                                          : appColorPrimaryLight,
+                                      isLiked ? Colors.red : appTextColorWhite,
                                 ),
                                 onPressed: () async {
                                   setState(() {
@@ -200,7 +199,7 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                             child: Container(
                               width: 50,
                               height: 50,
-                              color: appColorPrimary,
+                              color: appColorSecondary,
                               child: IconButton(
                                 icon: Icon(
                                   isSaved
@@ -209,7 +208,7 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                                   color:
                                       isSaved
                                           ? appColorPrimaryDarkLight
-                                          : appColorPrimaryLight,
+                                          : appTextColorWhite,
                                 ),
                                 onPressed: () async {
                                   setState(() {
@@ -232,7 +231,7 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                       child: Container(
                         width: 50,
                         height: 30,
-                        color: appColorPrimary,
+                        color: appColorSecondary,
                         child: Center(
                           child: InkWell(
                             child: Text(
@@ -280,11 +279,11 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                                   }
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: appColorPrimary,
+                                  backgroundColor: appColorSecondary,
                                 ),
                                 child: const Icon(
                                   Icons.arrow_back_ios_outlined,
-                                  color: appColorPrimaryLight,
+                                  color: appTextColorWhite,
                                 ),
                               ),
                             ),
@@ -311,11 +310,11 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
                                   }
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: appColorPrimary,
+                                  backgroundColor: appColorSecondary,
                                 ),
                                 child: const Icon(
                                   Icons.arrow_forward_ios_outlined,
-                                  color: appColorPrimaryLight,
+                                  color: appTextColorWhite,
                                 ),
                               ),
                             ),
@@ -329,6 +328,10 @@ class _ADetalheModulosScreenState extends State<ADetalheModulosScreen> {
             ],
           ),
         )
-        : Center(child: CircularProgressIndicator(color: appColorPrimary));
+        : Center(
+          child: CircularProgressIndicator(
+            color: appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+          ),
+        );
   }
 }

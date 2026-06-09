@@ -43,7 +43,7 @@ class _AModuloDiscussionComponentState
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.height * 0.53,
+            height: MediaQuery.of(context).size.height * 0.58,
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -58,6 +58,7 @@ class _AModuloDiscussionComponentState
               ),
             ),
           ),
+          const SizedBox(height: 2),
           ClipRRect(
             child: Stack(
               children: [
@@ -68,7 +69,7 @@ class _AModuloDiscussionComponentState
                     fillColor:
                         appStore.isDarkModeOn
                             ? context.cardColor
-                            : appetitAppContainerColor,
+                            : appColorSecondary,
                     filled: true,
                     labelText: 'Escreva aqui',
                     labelStyle: const TextStyle(color: Colors.grey),
@@ -115,7 +116,7 @@ class _AModuloDiscussionComponentState
                         _comentariosTextController.text = '';
                       },
                       icon: Icon(Icons.send_outlined),
-                      color: Colors.orange.shade600,
+                      color: appColorSecondary,
                     ),
                   ),
                 ),

@@ -61,12 +61,12 @@ class _AChildrensScreensState extends State<AChildrensScreens> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                   ),
                   child: IconButton(
                     icon: const Icon(
                       Icons.arrow_back_ios_outlined,
-                      color: appColorPrimaryLight,
+                      color: appTextColorWhite,
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -87,7 +87,7 @@ class _AChildrensScreensState extends State<AChildrensScreens> {
                   child: Container(
                     width: 50,
                     height: 30,
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                     child: Center(
                       child: InkWell(
                         child: Text(
@@ -133,11 +133,11 @@ class _AChildrensScreensState extends State<AChildrensScreens> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                             child: const Icon(
                               Icons.arrow_back_ios_outlined,
-                              color: appColorPrimaryLight,
+                              color: appTextColorWhite,
                             ),
                           ),
                         ),
@@ -161,11 +161,11 @@ class _AChildrensScreensState extends State<AChildrensScreens> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                             child: const Icon(
                               Icons.arrow_forward_ios_outlined,
-                              color: appColorPrimaryLight,
+                              color: appTextColorWhite,
                             ),
                           ),
                         ),

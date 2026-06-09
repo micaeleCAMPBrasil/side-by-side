@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:side_by_side/main.dart';
 
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/model/modulo.dart';
@@ -207,7 +208,12 @@ class _ADiscussionLicaoComponentState extends State<ADiscussionLicaoComponent> {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator(
+                color:
+                    appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+              ),
+            );
           }
         },
       ),

@@ -2,15 +2,18 @@
 
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/pg.dart';
 import 'package:side_by_side/model/usuario.dart';
 import 'package:side_by_side/screens/criancas/AChildrensScreens.dart';
+import 'package:side_by_side/screens/login/ALoginScreen.dart';
 import 'package:side_by_side/utils/AColors.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:side_by_side/utils/AConstants.dart';
+import 'package:side_by_side/utils/auth_service.dart';
 
 // ignore: must_be_immutable
 class AEditChildrenScreen extends StatefulWidget {
@@ -31,6 +34,32 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
       _nameController.text = widget.crianca.nome;
       _ageController.text = widget.crianca.idade;
     });
+  }
+
+  Future<bool> verificarLogin() async {
+    User? userFire = AuthService.gerarUserFirebase();
+
+    if (userFire == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Faça o login novamente'),
+          backgroundColor: appColorSecondary,
+        ),
+      );
+
+      await Future.delayed(const Duration(seconds: 2));
+
+      if (!mounted) return false;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => ALoginScreen()),
+      );
+
+      return false;
+    }
+
+    return true;
   }
 
   @override
@@ -55,12 +84,12 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                   ),
                   child: IconButton(
                     icon: const Icon(
                       Icons.arrow_back_ios_outlined,
-                      color: appColorPrimaryLight,
+                      color: appTextColorWhite,
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -97,10 +126,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                     controller: _nameController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      fillColor:
-                          appStore.isDarkModeOn
-                              ? context.cardColor
-                              : appShadowColor,
+                      fillColor: appColorPrimary,
                       filled: true,
                       labelStyle: colorSecondaryBold14,
                       hintStyle: colorSecondaryBold14,
@@ -121,10 +147,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      fillColor:
-                          appStore.isDarkModeOn
-                              ? context.cardColor
-                              : appShadowColor,
+                      fillColor: appColorPrimary,
                       filled: true,
                       labelStyle: colorSecondaryBold14,
                       hintStyle: colorSecondaryBold14,
@@ -150,42 +173,22 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    /*Expanded(
-                      flex: 3,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: SizedBox(
-                          width: 60,
-                          height: 60,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: appStore.isDarkModeOn
-                                  ? context.cardColor
-                                  : appStore.isDarkModeOn
-                                      ? context.cardColor
-                                      : appetitAppContainerColor,
-                            ),
-                            child: const Icon(
-                              Icons.add,
-                              color: appetitBrownColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    // Spacer(),*/
-                    //const SizedBox(width: 64),
                     Expanded(
                       flex: 7,
                       child: ElevatedButton(
                         onPressed: () async {
+                          bool podeContinuar = await verificarLogin();
+
+                          if (!podeContinuar) {
+                            return;
+                          }
+
                           if (_nameController.text == '' ||
                               _ageController.text == '') {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text('Informações vazias'),
-                                backgroundColor: appColorPrimary,
+                                backgroundColor: appColorSecondary,
                               ),
                             );
                           } else {
@@ -203,7 +206,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         content: Text('Sucesso'),
-                                        backgroundColor: appColorPrimary,
+                                        backgroundColor: appColorSecondary,
                                       ),
                                     );
 
@@ -221,7 +224,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         content: Text('Erro'),
-                                        backgroundColor: appColorPrimary,
+                                        backgroundColor: appColorSecondary,
                                       ),
                                     );
                                   }
@@ -229,7 +232,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: appColorPrimary,
+                          backgroundColor: appColorSecondary,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 48,
                             vertical: 16,
@@ -246,6 +249,7 @@ class _AEditChildrenScreenState extends State<AEditChildrenScreen> {
                             const Icon(
                               Icons.arrow_forward_ios_outlined,
                               size: 15,
+                              color: appTextColorWhite,
                             ),
                           ],
                         ),

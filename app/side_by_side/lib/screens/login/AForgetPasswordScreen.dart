@@ -44,12 +44,12 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                     child: Container(
                       width: 50,
                       height: 50,
-                      color: appColorPrimary,
+                      color: appColorSecondary,
                       child: InkWell(
                         borderRadius: BorderRadius.circular(25),
                         child: const Icon(
                           Icons.arrow_back_ios_outlined,
-                          color: appColorPrimaryLight,
+                          color: appTextColorWhite,
                         ),
                         onTap:
                             () => Navigator.push(
@@ -112,7 +112,7 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text('Digite um e-mail válido'),
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                           );
                         } else {
@@ -122,7 +122,7 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(value),
-                                backgroundColor: appColorPrimary,
+                                backgroundColor: appColorSecondary,
                               ),
                             );
                           });
@@ -130,7 +130,7 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: appColorPrimary,
+                      backgroundColor: appColorSecondary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -143,7 +143,7 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                         Icon(
                           Icons.arrow_forward_ios_outlined,
                           size: 15,
-                          color: appColorPrimaryLight,
+                          color: appTextColorWhite,
                         ),
                       ],
                     ),

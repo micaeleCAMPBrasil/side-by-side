@@ -3,6 +3,7 @@ import 'dart:html' as html;
 import 'dart:js' as js;
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:side_by_side/main.dart';
 import 'package:side_by_side/utils/AColors.dart';
 import 'package:side_by_side/utils/AConstants.dart';
 import 'package:side_by_side/utils/auth_check.dart';
@@ -134,7 +135,12 @@ class _PwaInstallPageState extends State<PwaInstallPage> {
                     ),
                   ],
                 ).onTap(_installPwa)
-                : const CircularProgressIndicator(),
+                : CircularProgressIndicator(
+                  color:
+                      appStore.isDarkModeOn
+                          ? appColorPrimary
+                          : appColorSecondary,
+                ),
 
             Text(
               'E ative as notificações!',

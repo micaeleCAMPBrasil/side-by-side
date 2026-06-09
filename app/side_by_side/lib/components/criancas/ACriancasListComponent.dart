@@ -53,21 +53,18 @@ class _ACriancasListComponentState extends State<ACriancasListComponent> {
                 child: Container(
                   height: 30,
                   width: 120,
-                  color:
-                      appStore.isDarkModeOn
-                          ? context.cardColor
-                          : appetitAppContainerColor,
+                  color: appColorPrimary,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
                         Icons.adjust_outlined,
-                        color: Colors.red,
+                        color: appColorSecondary,
                         size: 15,
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        '${storePg.listCriancas.value.length} crianças',
+                        '${storePg.listCriancas.value.length} criança(s)',
                         style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.w400,
@@ -160,13 +157,13 @@ class _ACriancasListComponentState extends State<ACriancasListComponent> {
                                     child: Container(
                                       color:
                                           appStore.isDarkModeOn
-                                              ? context.cardColor
-                                              : appetitAppContainerColor,
+                                              ? appColorPrimary
+                                              : appColorSecondary,
                                       height: 50,
                                       width: 50,
                                       child: const Icon(
                                         Icons.edit,
-                                        color: Colors.grey,
+                                        color: appTextColorWhite,
                                       ),
                                     ),
                                   ),
@@ -183,6 +180,10 @@ class _ACriancasListComponentState extends State<ACriancasListComponent> {
             ],
           ),
         )
-        : Center(child: CircularProgressIndicator(color: appColorPrimary));
+        : Center(
+          child: CircularProgressIndicator(
+            color: appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+          ),
+        );
   }
 }

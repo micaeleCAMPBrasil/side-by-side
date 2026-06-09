@@ -19,6 +19,8 @@ class _AWalkThroughScreenState extends State<AWalkThroughScreen> {
 
   late PageController pageController;
 
+  //bool naoMostrarNovamente = false;
+
   @override
   void initState() {
     setStatusBarColor(Colors.transparent);
@@ -31,6 +33,14 @@ class _AWalkThroughScreenState extends State<AWalkThroughScreen> {
     return (150 / modal.length) * (progressIndex + 1);
   }
 
+  /*Future<void> salvarPreferencia() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    if (naoMostrarNovamente) {
+      await prefs.setBool('pular_walkthrough', true);
+    }
+  }*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,100 +48,126 @@ class _AWalkThroughScreenState extends State<AWalkThroughScreen> {
         children: [
           PageView(
             controller: pageController,
-            onPageChanged: (value) => setState(() {
-              initialValue = value;
-              progressIndex = value;
-              debugPrint("$value");
-            }),
-            children: modal.map((e) {
-              return Stack(
-                children: [
-                  //Image
-                  Image.asset(
-                    e.image.toString(),
-                    fit: BoxFit.cover,
-                    color: Colors.black.withOpacity(0.35),
-                    colorBlendMode: BlendMode.darken,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                  ),
-                  // DataEntry
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            onPageChanged:
+                (value) => setState(() {
+                  initialValue = value;
+                  progressIndex = value;
+                  debugPrint("$value");
+                }),
+            children:
+                modal.map((e) {
+                  return Stack(
                     children: [
+                      //Image
+                      Image.asset(
+                        e.image.toString(),
+                        fit: BoxFit.cover,
+                        color: Colors.black.withOpacity(0.35),
+                        colorBlendMode: BlendMode.darken,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                      ),
+                      // DataEntry
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).viewPadding.top + 16,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          Column(
                             children: [
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.06,
+                                height:
+                                    MediaQuery.of(context).viewPadding.top + 16,
                               ),
-                              Text(
-                                (e.heading ?? ""),
-                                style: colorWhiteMedium25,
-                              ),
-                              // Button Pular
-                              initialValue < 2
-                                  ? Container(
-                                      padding: const EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                        color: appColorPrimary,
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const AWelcomeScreen(),
-                                            ),
-                                          );
-                                        },
-                                        child: Text(
-                                          'Pular',
-                                          style: colorWhiteBold14,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width *
+                                        0.06,
+                                  ),
+                                  Text(
+                                    (e.heading ?? ""),
+                                    style: colorWhiteMedium25,
+                                  ),
+                                  // Button Pular
+                                  initialValue < 2
+                                      ? Container(
+                                        padding: const EdgeInsets.all(5),
+                                        decoration: BoxDecoration(
+                                          color: appColorSecondary,
+                                          borderRadius: BorderRadius.circular(
+                                            5,
+                                          ),
                                         ),
-                                      ),
-                                    )
-                                  : Container(),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.06,
+                                        child: InkWell(
+                                          onTap: () async {
+                                            //await salvarPreferencia();
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder:
+                                                    (context) =>
+                                                        const AWelcomeScreen(),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            'Pular',
+                                            style: colorWhiteBold14,
+                                          ),
+                                        ),
+                                      )
+                                      : Container(),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width *
+                                        0.06,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  e.title.toString(),
+                                  style: colorWhiteSemiBold40,
+                                ),
+                                const SizedBox(height: 16),
+                                Text(
+                                  e.subtitle.toString(),
+                                  style: colorWhiteRegular14,
+                                ),
+                                const SizedBox(height: 80),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              e.title.toString(),
-                              style: colorWhiteSemiBold40,
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              e.subtitle.toString(),
-                              style: colorWhiteRegular14,
-                            ),
-                            const SizedBox(height: 80),
-                          ],
-                        ),
-                      ),
                     ],
-                  ),
-                ],
-              );
-            }).toList(),
+                  );
+                }).toList(),
           ),
+
           //Determinate LinearProgressIndicator & FAB
+          /*Row(
+            children: [
+              Checkbox(
+                value: naoMostrarNovamente,
+                onChanged: (value) {
+                  setState(() {
+                    naoMostrarNovamente = value ?? false;
+                  });
+                },
+              ),
+              Text('Não mostrar novamente', style: colorWhiteRegular14),
+            ],
+          ),*/
           Positioned(
             bottom: 16,
             left: 16,
@@ -154,7 +190,7 @@ class _AWalkThroughScreenState extends State<AWalkThroughScreen> {
                       width: containerWidth(),
                       height: 10,
                       decoration: BoxDecoration(
-                        color: appColorPrimary,
+                        color: appColorSecondary,
                         borderRadius: BorderRadius.circular(45),
                       ),
                     ),
@@ -163,7 +199,7 @@ class _AWalkThroughScreenState extends State<AWalkThroughScreen> {
                 // Spacer(),
                 Container(
                   decoration: BoxDecoration(
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   height: 50,

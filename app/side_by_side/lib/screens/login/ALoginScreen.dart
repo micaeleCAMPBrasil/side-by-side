@@ -48,7 +48,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   width: 50,
@@ -57,7 +57,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                     borderRadius: BorderRadius.circular(25),
                     child: const Icon(
                       Icons.arrow_back_ios_outlined,
-                      color: appColorPrimaryLight,
+                      color: appTextColorWhite,
                     ),
                     onTap:
                         () => Navigator.push(
@@ -218,7 +218,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text('Dados Vazios'),
-                        backgroundColor: appColorPrimary,
+                        backgroundColor: appColorSecondary,
                       ),
                     );
                   } else {
@@ -235,7 +235,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Bem Vindo'),
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                           );
 
@@ -252,7 +252,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Você precisa se cadastrar!'),
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                           );
 
@@ -277,7 +277,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                             content: Text(
                               'Dados Inválidos! Você já se cadastrou? Ou Faça o login usando o Google',
                             ),
-                            backgroundColor: appColorPrimary,
+                            backgroundColor: appColorSecondary,
                           ),
                         );
                       }
@@ -285,7 +285,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: appColorPrimary,
+                  backgroundColor: appColorSecondary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -312,7 +312,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                                     content: Text(
                                       'Este email já possui cadastro usando email e senha. Faça login usando essa opção.',
                                     ),
-                                    backgroundColor: appColorPrimary,
+                                    backgroundColor: appColorSecondary,
                                   ),
                                 );
                               } else {
@@ -337,7 +337,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                                       content: Text(
                                         'Você precisa se cadastrar!',
                                       ),
-                                      backgroundColor: appColorPrimary,
+                                      backgroundColor: appColorSecondary,
                                     ),
                                   );
 
@@ -366,7 +366,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                                   content: Text(
                                     'Dados Inválidos! Você já se cadastrou?',
                                   ),
-                                  backgroundColor: appColorPrimary,
+                                  backgroundColor: appColorSecondary,
                                 ),
                               );
                             }

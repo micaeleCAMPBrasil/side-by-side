@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:side_by_side/main.dart';
 
 import 'package:side_by_side/model/modulo.dart';
 import 'package:side_by_side/model/usuario.dart';
@@ -13,8 +14,11 @@ import 'package:side_by_side/utils/AColors.dart';
 class ADiscussionModuloComponent extends StatefulWidget {
   Modulos modulo;
   bool limite;
-  ADiscussionModuloComponent(
-      {required this.modulo, required this.limite, super.key});
+  ADiscussionModuloComponent({
+    required this.modulo,
+    required this.limite,
+    super.key,
+  });
 
   @override
   State<ADiscussionModuloComponent> createState() =>
@@ -24,8 +28,9 @@ class ADiscussionModuloComponent extends StatefulWidget {
 class _ADiscussionModuloComponentState
     extends State<ADiscussionModuloComponent> {
   Future addLike(bool isLiked, String uid, String id) async {
-    DocumentReference postRef =
-        FirebaseFirestore.instance.collection('CommentsModulos').doc(id);
+    DocumentReference postRef = FirebaseFirestore.instance
+        .collection('CommentsModulos')
+        .doc(id);
 
     if (isLiked) {
       postRef.update({
@@ -45,16 +50,17 @@ class _ADiscussionModuloComponentState
 
     return SingleChildScrollView(
       child: StreamBuilder(
-        stream: widget.limite
-            ? FirebaseFirestore.instance
-                .collection('CommentsModulos')
-                .orderBy('TimeStamp', descending: true)
-                .limit(3)
-                .snapshots()
-            : FirebaseFirestore.instance
-                .collection('CommentsModulos')
-                .orderBy('TimeStamp', descending: true)
-                .snapshots(),
+        stream:
+            widget.limite
+                ? FirebaseFirestore.instance
+                    .collection('CommentsModulos')
+                    .orderBy('TimeStamp', descending: true)
+                    .limit(3)
+                    .snapshots()
+                : FirebaseFirestore.instance
+                    .collection('CommentsModulos')
+                    .orderBy('TimeStamp', descending: true)
+                    .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
@@ -63,8 +69,9 @@ class _ADiscussionModuloComponentState
                 final comment = snapshot.data!.docs[index];
                 Map<String, dynamic> userInfo = comment['info_user'];
 
-                List<String> listUIDUserLikes =
-                    List<String>.from(comment['likes'] ?? []);
+                List<String> listUIDUserLikes = List<String>.from(
+                  comment['likes'] ?? [],
+                );
 
                 bool isLiked = listUIDUserLikes.contains(usuario.uid);
 
@@ -89,15 +96,13 @@ class _ADiscussionModuloComponentState
                           const SizedBox(width: 8),
                           Text(
                             userInfo['nome'].toString(),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                           userInfo['uid'].toString() == usuario.uid
                               ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    /*IconButton(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  /*IconButton(
                                     onPressed: () {},
                                     icon: Icon(
                                       Icons.edit,
@@ -105,25 +110,29 @@ class _ADiscussionModuloComponentState
                                       color: iconColorSecondary,
                                     ),
                                   ),*/
-                                    IconButton(
-                                      onPressed: () {
-                                        FirebaseFirestore.instance
-                                            .collection("CommentsModulos")
-                                            .doc(comment.id)
-                                            .delete()
-                                            .then((value) =>
-                                                debugPrint('post deletado'))
-                                            .catchError((error) =>
-                                                debugPrint('erro $error'));
-                                      },
-                                      icon: Icon(
-                                        Icons.delete,
-                                        size: 20,
-                                        color: iconColorSecondary,
-                                      ),
+                                  IconButton(
+                                    onPressed: () {
+                                      FirebaseFirestore.instance
+                                          .collection("CommentsModulos")
+                                          .doc(comment.id)
+                                          .delete()
+                                          .then(
+                                            (value) =>
+                                                debugPrint('post deletado'),
+                                          )
+                                          .catchError(
+                                            (error) =>
+                                                debugPrint('erro $error'),
+                                          );
+                                    },
+                                    icon: Icon(
+                                      Icons.delete,
+                                      size: 20,
+                                      color: iconColorSecondary,
                                     ),
-                                  ],
-                                )
+                                  ),
+                                ],
+                              )
                               : Container(),
                         ],
                       ),
@@ -148,16 +157,22 @@ class _ADiscussionModuloComponentState
                                         isLiked.validate()
                                             ? Icons.favorite_outlined
                                             : Icons.favorite_border,
-                                        color: isLiked.validate()
-                                            ? Colors.red
-                                            : context.iconColor,
-                                      ).onTap(() {
-                                        isLiked = !isLiked.validate();
-                                        addLike(
-                                            isLiked, usuario.uid, comment.id);
-                                      },
-                                          splashColor: Colors.transparent,
-                                          highlightColor: Colors.transparent),
+                                        color:
+                                            isLiked.validate()
+                                                ? Colors.red
+                                                : context.iconColor,
+                                      ).onTap(
+                                        () {
+                                          isLiked = !isLiked.validate();
+                                          addLike(
+                                            isLiked,
+                                            usuario.uid,
+                                            comment.id,
+                                          );
+                                        },
+                                        splashColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                      ),
                                       Text(listUIDUserLikes.length.toString()),
                                     ],
                                   ),
@@ -186,12 +201,13 @@ class _ADiscussionModuloComponentState
               physics: const NeverScrollableScrollPhysics(),
             );
           } else if (snapshot.hasError) {
-            return Center(
-              child: Text('Error: ${snapshot.error}'),
-            );
+            return Center(child: Text('Error: ${snapshot.error}'));
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Center(
+              child: CircularProgressIndicator(
+                color:
+                    appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+              ),
             );
           }
         },

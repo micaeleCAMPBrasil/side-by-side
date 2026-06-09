@@ -196,6 +196,117 @@ List<DetalhesModulos> listDetalhesModulos = [
   ),
 ];
 
+class Versiculos {
+  int idModulo;
+  List<int> nLicao;
+  String versiculo;
+
+  Versiculos({
+    required this.idModulo,
+    required this.nLicao,
+    required this.versiculo,
+  });
+}
+
+List<Versiculos> versiculos_modulos = [
+  Versiculos(
+    idModulo: 1,
+    nLicao: [1, 2],
+    versiculo:
+        'Antes de nascerem os montes e de criares a terra e o mundo, de eternidade a eternidade tu és Deus. Salmos 90:2',
+  ),
+  Versiculos(
+    idModulo: 1,
+    nLicao: [3, 4],
+    versiculo:
+        'Como é feliz aquele cujo auxílio é o Deus de Jacó, cuja esperança está no Senhor, no seu Deus, que fez os céus e a terra, o mar e tudo o que neles há, e que mantém a sua fidelidade para sempre! Salmos 146:5,6',
+  ),
+  Versiculos(
+    idModulo: 1,
+    nLicao: [5, 6],
+    versiculo:
+        'Criou Deus o homem à sua imagem, à imagem de Deus o criou; homem e mulher os criou. Gênesis 1:27',
+  ),
+  Versiculos(
+    idModulo: 1,
+    nLicao: [7, 8],
+    versiculo:
+        'Tudo tem o seu tempo determinado, e há tempo para todo o propósito debaixo do céu. Eclesiastes 3:1',
+  ),
+];
+
+class Misterios {
+  int idModulo;
+  List<int> nLicao;
+  String titulo;
+  String? descricao;
+  List<String> misterios;
+
+  Misterios({
+    required this.idModulo,
+    required this.nLicao,
+    required this.titulo,
+    this.descricao,
+    required this.misterios,
+  });
+}
+
+List<Misterios> misterios_modulos = [
+  Misterios(
+    idModulo: 1,
+    nLicao: [1, 2],
+    titulo: '1 - A voz misteriosa',
+    descricao:
+        'Na nossa trilha existe uma voz misteriosa, uma voz que sempre foi ouvida e ainda hoje é ouvida.',
+    misterios: [
+      'De quem é a voz?',
+      'O que ela diz?',
+      'Onde ela é ouvida?',
+      'Quem a obedece?',
+      'Como ela é ouvida hoje?',
+    ],
+  ),
+  Misterios(
+    idModulo: 1,
+    nLicao: [3, 4],
+    titulo: '2 - A capa invisível',
+    descricao: '',
+    misterios: [
+      'Que capa é essa?',
+      'O que ela protege?',
+      'De quê ela protege?',
+      'Qual é a nossa capa?',
+      'Como ficar protegido?',
+    ],
+  ),
+  Misterios(
+    idModulo: 1,
+    nLicao: [5, 6],
+    titulo: '3 - A Polícia Verde',
+    descricao: '',
+    misterios: [
+      'Quem é a polícia verde?',
+      'Qual o seu lema?',
+      'Para quem ela trabalha?',
+      'O que ela faz?',
+      'Como posso ser uma polícia verde?',
+    ],
+  ),
+  Misterios(
+    idModulo: 1,
+    nLicao: [7, 8],
+    titulo: '4 - O Relógio de Deus',
+    descricao: '',
+    misterios: [
+      'Quem tem esse relógio?',
+      'O tempo é igual ao nosso?',
+      'Como ele funciona?',
+      'Como sabemos a hora certa das coisas?',
+      'Podemos adiantar as horas nesse relógio?',
+    ],
+  ),
+];
+
 class ConfiguracaoTexto {
   TextStyle style;
   TextAlign textAlign;

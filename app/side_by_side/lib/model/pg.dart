@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:side_by_side/model/licao.dart';
 import 'package:side_by_side/store/pg_store.dart';
@@ -6,7 +8,7 @@ import 'package:side_by_side/utils/http_client.dart';
 
 class Pg {
   int id, idModulo, nLicao, nDevocional;
-  String uid, data;
+  String uid, data, horarioNot;
 
   Pg({
     required this.id,
@@ -15,6 +17,7 @@ class Pg {
     required this.nLicao,
     required this.nDevocional,
     required this.data,
+    required this.horarioNot,
   });
 
   factory Pg.fromMap(Map<String, dynamic> map) {
@@ -25,6 +28,7 @@ class Pg {
       nLicao: int.parse(map['n_licao'].toString()),
       nDevocional: int.parse(map['devocional'].toString()),
       data: map['data'],
+      horarioNot: map['hora_notificacao'],
     );
   }
 }
@@ -36,13 +40,10 @@ Pg pgNull = Pg(
   nLicao: 0,
   nDevocional: 0,
   data: '',
+  horarioNot: '',
 );
 
-final PgStore storePg = PgStore(
-  repository: IFuncoesPHP(
-    client: HttpClient(),
-  ),
-);
+final PgStore storePg = PgStore(repository: IFuncoesPHP(client: HttpClient()));
 
 class PgProvider extends ChangeNotifier {
   Pg pg = pgNull;
@@ -120,6 +121,58 @@ ProgressoLicao progressoLicaoNull = ProgressoLicao(
   save: 0,
   data: '',
 );
+
+class DetalheDesafio {
+  String titulo, subtitulo;
+  bool e_pergunta;
+  List dados;
+
+  DetalheDesafio({
+    required this.titulo,
+    required this.e_pergunta,
+    required this.subtitulo,
+    required this.dados,
+  });
+}
+
+class Desafio {
+  int idModulo, nLicao;
+  String titulo, capa;
+  List<DetalheDesafio> lista;
+
+  Desafio({
+    required this.idModulo,
+    required this.nLicao,
+    required this.capa,
+    required this.titulo,
+    required this.lista,
+  });
+
+  factory Desafio.fromMap(Map<String, dynamic> map) {
+    List<dynamic> desafioJson = jsonDecode(map['desafio'].toString());
+
+    List<DetalheDesafio> detalhes = [];
+
+    for (var item in desafioJson) {
+      detalhes.add(
+        DetalheDesafio(
+          titulo: item['titulo'] ?? '',
+          subtitulo: item['subtitulo'] ?? '',
+          e_pergunta: item['estilo_pergunta'] ?? false,
+          dados: item['lista'] != null ? List<String>.from(item['lista']) : [],
+        ),
+      );
+    }
+
+    return Desafio(
+      idModulo: int.parse(map['id_modulo'].toString()),
+      nLicao: int.parse(map['n_licao'].toString()),
+      titulo: map['titulo'].toString(),
+      capa: map['capa'].toString(),
+      lista: detalhes, // aqui também,
+    );
+  }
+}
 
 class ProgressoDevocional {
   int id, idPg, idModulo, nLicao, dia, checkDevocional;

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:side_by_side/main.dart';
 import 'package:side_by_side/model/pg.dart';
 import 'package:side_by_side/model/usuario.dart';
 import 'package:side_by_side/screens/ADashboardScreen.dart';
@@ -11,6 +12,7 @@ import 'package:side_by_side/screens/inicio/AWalkThroughScreen.dart';
 import 'package:side_by_side/store/pg_store.dart';
 import 'package:side_by_side/store/php.dart';
 import 'package:side_by_side/store/user_store.dart';
+import 'package:side_by_side/utils/AColors.dart';
 import 'package:side_by_side/utils/auth_service.dart';
 import 'package:side_by_side/utils/http_client.dart';
 import 'package:side_by_side/utils/notification_service.dart';
@@ -100,6 +102,12 @@ class _CheckUserLoggedInOrNotState extends State<CheckUserLoggedInOrNot> {
   }
 
   loading() {
-    return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(
+          color: appStore.isDarkModeOn ? appColorPrimary : appColorSecondary,
+        ),
+      ),
+    );
   }
 }

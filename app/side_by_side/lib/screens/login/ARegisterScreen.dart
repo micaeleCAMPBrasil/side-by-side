@@ -146,12 +146,12 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                   ),
                   child: IconButton(
                     icon: const Icon(
                       Icons.arrow_back_ios_outlined,
-                      color: appColorPrimaryLight,
+                      color: appTextColorWhite,
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -176,7 +176,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                   child: Container(
                     width: 50,
                     height: 30,
-                    color: appColorPrimary,
+                    color: appColorSecondary,
                     child: Center(
                       child: InkWell(
                         child: Text(
@@ -228,11 +228,11 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                             child: const Icon(
                               Icons.arrow_back_ios_outlined,
-                              color: appColorPrimaryLight,
+                              color: appTextColorWhite,
                             ),
                           ),
                         ),
@@ -259,7 +259,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text('Dados Vazios'),
-                                      backgroundColor: appColorPrimary,
+                                      backgroundColor: appColorSecondary,
                                     ),
                                   );
                                 } else {
@@ -294,7 +294,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                         content: Text(
                                           'Cadastro Realizado com Sucesso',
                                         ),
-                                        backgroundColor: appColorPrimary,
+                                        backgroundColor: appColorSecondary,
                                       ),
                                     );
                                     Future.delayed(
@@ -327,7 +327,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                                 color: Colors.white,
                                               ),
                                             ),
-                                            backgroundColor: appColorPrimary,
+                                            backgroundColor: appColorSecondary,
                                           ),
                                         );
                                       } else if (value ==
@@ -369,7 +369,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                                   'Você já está cadastrado',
                                                 ),
                                                 backgroundColor:
-                                                    appColorPrimary,
+                                                    appColorSecondary,
                                               ),
                                             );
                                             Future.delayed(
@@ -398,7 +398,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                                   ),
                                                 ),
                                                 backgroundColor:
-                                                    appColorPrimary,
+                                                    appColorSecondary,
                                               ),
                                             );
                                           } else {
@@ -413,7 +413,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                                   ),
                                                 ),
                                                 backgroundColor:
-                                                    appColorPrimary,
+                                                    appColorSecondary,
                                               ),
                                             );
                                           }
@@ -446,7 +446,7 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                                             content: Text(
                                               'Cadastro Realizado com Sucesso',
                                             ),
-                                            backgroundColor: appColorPrimary,
+                                            backgroundColor: appColorSecondary,
                                           ),
                                         );
                                         Future.delayed(
@@ -471,11 +471,11 @@ class _ARegisterScreenState extends State<ARegisterScreen> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: appColorPrimary,
+                              backgroundColor: appColorSecondary,
                             ),
                             child: const Icon(
                               Icons.arrow_forward_ios_outlined,
-                              color: appColorPrimaryLight,
+                              color: appTextColorWhite,
                             ),
                           ),
                         ),
